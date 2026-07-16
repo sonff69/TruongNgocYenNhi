@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yến Nhi's Dreamy Digital Portfolio</title>
-    <!-- Google Fonts: Quicksand & Comfortaa cho phong cách bo tròn cute mộng mơ -->
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        :border-box {
+            box-sizing: border-box;
+        }
         :root {
-            --primary: #4a77a8;       /* Xanh dương mộng mơ */
-            --secondary: #a2c2e0;     /* Xanh pastel nhạt */
-            --accent: #e8b4b4;        /* Hồng đào nhạt */
-            --glow: #fff5cc;          /* Vàng lấp lánh */
-            --dark: #2c3e50;          /* Xanh đậm dễ đọc */
-            --glass-bg: rgba(255, 255, 255, 0.88); 
+            --primary: #1e40af;       /* Xanh dương đậm siêu rõ chữ */
+            --primary-light: #3b82f6;
+            --secondary: #93c5fd;     /* Xanh pastel */
+            --accent: #f43f5e;        /* Hồng đào nổi bật */
+            --dark: #0f172a;          /* Đen Slate cực kỳ tương phản, dễ đọc */
+            --text-muted: #475569;    /* Xám đậm cho mô tả phụ */
+            --glass-bg: rgba(255, 255, 255, 0.98); /* Độ đục 98% đảm bảo cách ly họa tiết nền */
             --border-radius: 20px;
-            --shadow: 0 8px 32px rgba(162, 194, 224, 0.2);
+            --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
@@ -40,18 +44,17 @@
         }
 
         h1, h2, h3, h4, h5 {
-            font-family: 'Comfortaa', display;
+            font-family: 'Comfortaa', sans-serif;
             font-weight: 700;
             color: var(--primary);
         }
 
-        /* Custom Scrollbar */
+        /* Scrollbar */
         ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
+            width: 10px;
         }
         ::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.5);
         }
         ::-webkit-scrollbar-thumb {
             background: var(--secondary);
@@ -69,23 +72,12 @@
 
         .glass-panel {
             background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 2px solid rgba(255, 255, 255, 0.7);
+            border: 2px solid rgba(30, 64, 175, 0.15);
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
             padding: 40px;
             margin-bottom: 40px;
             position: relative;
-        }
-
-        /* Floating Clouds Background Animation Elements */
-        .cloud-deco {
-            position: absolute;
-            font-size: 50px;
-            opacity: 0.12;
-            pointer-events: none;
-            animation: floatLeftRight 15s infinite linear;
         }
 
         /* Navigation Bar */
@@ -97,15 +89,14 @@
         }
 
         .nav-wrapper {
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.98);
             border-radius: 50px;
-            padding: 8px 25px;
+            padding: 10px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border: 2px solid rgba(162, 194, 224, 0.3);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            border: 2px solid rgba(30, 64, 175, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
 
         .logo {
@@ -132,8 +123,8 @@
         nav a {
             text-decoration: none;
             color: var(--dark);
-            font-weight: 600;
-            font-size: 14px;
+            font-weight: 700;
+            font-size: 14.5px;
             transition: var(--transition);
             position: relative;
             padding: 5px 0;
@@ -160,10 +151,10 @@
         }
 
         .btn-drive {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
             color: white !important;
             border: none;
-            padding: 8px 16px;
+            padding: 10px 20px;
             border-radius: 30px;
             font-weight: 700;
             cursor: pointer;
@@ -172,13 +163,13 @@
             align-items: center;
             gap: 6px;
             text-decoration: none;
-            box-shadow: 0 4px 12px rgba(162, 194, 224, 0.4);
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
         }
 
         .btn-drive:hover {
-            transform: scale(1.05) rotate(-1deg);
+            transform: scale(1.05);
             background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            box-shadow: 0 6px 18px rgba(232, 180, 180, 0.5);
+            box-shadow: 0 6px 18px rgba(244, 63, 94, 0.4);
         }
 
         /* Hero Section */
@@ -200,19 +191,10 @@
             height: 230px;
             object-fit: cover;
             border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
-            border: 6px solid white;
+            border: 6px solid var(--primary);
             box-shadow: var(--shadow);
             animation: blobMorphing 8s infinite ease-in-out;
         }
-
-        .hero-deco {
-            position: absolute;
-            font-size: 24px;
-            color: var(--accent);
-            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.08));
-        }
-        .hd-1 { top: -5px; left: 15px; animation: bounceFloat 3s infinite ease-in-out; }
-        .hd-2 { bottom: 5px; right: 15px; animation: bounceFloat 4s infinite ease-in-out; }
 
         .hero-info h1 {
             font-size: 28px;
@@ -222,7 +204,7 @@
         .hero-tag {
             font-size: 15px;
             color: var(--primary);
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 15px;
             display: flex;
             align-items: center;
@@ -230,15 +212,16 @@
         }
 
         .hero-bio {
-            font-size: 14.5px;
+            font-size: 15px;
             text-align: justify;
             margin-bottom: 20px;
+            color: var(--dark);
         }
 
-        /* Portfolio Goals Box */
+        /* Goals Box */
         .goals-box {
-            background: rgba(255, 255, 255, 0.6);
-            border: 1.5px dashed var(--secondary);
+            background: rgba(147, 197, 253, 0.1);
+            border: 2px dashed var(--primary);
             border-radius: 15px;
             padding: 20px;
             margin-top: 15px;
@@ -260,9 +243,10 @@
         }
 
         .goals-list li {
-            font-size: 13.5px;
+            font-size: 14px;
             position: relative;
-            padding-left: 18px;
+            padding-left: 20px;
+            color: var(--dark);
         }
 
         .goals-list li::before {
@@ -273,28 +257,31 @@
             font-size: 10px;
         }
 
-        /* Drive Call to Action Banner */
+        /* Drive Banner - Đảm bảo siêu tương phản dễ đọc */
         .drive-banner {
-            background: linear-gradient(135deg, rgba(232, 180, 180, 0.15) 0%, rgba(162, 194, 224, 0.25) 100%);
-            border: 2px dashed var(--primary);
+            background: white;
+            border: 3px solid var(--primary);
             border-radius: 20px;
-            padding: 25px;
+            padding: 30px;
             text-align: center;
             margin-bottom: 40px;
-            position: relative;
+            box-shadow: 0 8px 24px rgba(30, 64, 175, 0.1);
         }
 
         .drive-banner h3 {
-            font-size: 18px;
-            margin-bottom: 8px;
+            font-size: 20px;
+            color: var(--primary);
+            margin-bottom: 10px;
         }
 
         .drive-banner p {
-            font-size: 14px;
-            margin-bottom: 15px;
+            font-size: 15px;
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-weight: 600;
         }
 
-        /* Interactive Dashboard Grid for Projects */
+        /* Interactive Dashboard Grid */
         .dashboard-container {
             display: grid;
             grid-template-columns: 240px 1fr;
@@ -310,13 +297,13 @@
         }
 
         .tab-btn {
-            background: rgba(255, 255, 255, 0.7);
-            border: 1.5px solid rgba(162, 194, 224, 0.3);
+            background: white;
+            border: 2px solid rgba(30, 64, 175, 0.15);
             border-radius: 15px;
-            padding: 12px 15px;
+            padding: 14px 18px;
             text-align: left;
             font-family: 'Comfortaa', sans-serif;
-            font-size: 12.5px;
+            font-size: 13px;
             font-weight: 700;
             color: var(--dark);
             cursor: pointer;
@@ -329,18 +316,18 @@
 
         .tab-btn i {
             font-size: 16px;
-            color: var(--secondary);
+            color: var(--primary-light);
             transition: var(--transition);
         }
 
         .tab-btn:hover {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(147, 197, 253, 0.1);
             transform: translateX(5px);
             border-color: var(--primary);
         }
 
         .tab-btn.active {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
             color: white;
             border-color: transparent;
             box-shadow: var(--shadow);
@@ -351,11 +338,11 @@
             transform: scale(1.1);
         }
 
-        /* Dashboard Content Window */
+        /* Dashboard Window */
         .dashboard-window {
             background: white;
             border-radius: var(--border-radius);
-            border: 2px solid rgba(162, 194, 224, 0.2);
+            border: 2px solid rgba(30, 64, 175, 0.15);
             box-shadow: var(--shadow);
             padding: 35px;
             min-height: 550px;
@@ -363,7 +350,7 @@
         }
 
         .project-header {
-            border-bottom: 2px dashed rgba(162, 194, 224, 0.3);
+            border-bottom: 2px dashed rgba(30, 64, 175, 0.15);
             padding-bottom: 15px;
             margin-bottom: 25px;
             display: flex;
@@ -372,7 +359,7 @@
         }
 
         .project-badge {
-            background: rgba(232, 180, 180, 0.2);
+            background: rgba(244, 63, 94, 0.1);
             color: var(--accent);
             font-size: 11px;
             font-weight: 700;
@@ -384,7 +371,7 @@
         .sub-section-title {
             font-size: 15px;
             color: var(--primary);
-            margin: 20px 0 10px 0;
+            margin: 25px 0 12px 0;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -392,7 +379,28 @@
             padding-left: 10px;
         }
 
-        /* Steps list (Bài 1) */
+        /* Interactive Widgets Basic Styling */
+        .interactive-widget-box {
+            background: #f8fafc;
+            border: 2px solid var(--primary-light);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .widget-title {
+            font-family: 'Comfortaa', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Steps cards (Bài 1) */
         .steps-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -401,8 +409,8 @@
         }
 
         .step-card {
-            background: rgba(162, 194, 224, 0.08);
-            border: 1px solid rgba(162, 194, 224, 0.15);
+            background: rgba(30, 64, 175, 0.04);
+            border: 1px solid rgba(30, 64, 175, 0.1);
             border-radius: 12px;
             padding: 12px;
             display: flex;
@@ -426,8 +434,8 @@
         }
 
         .step-txt {
-            font-size: 13px;
-            line-height: 1.4;
+            font-size: 13.5px;
+            color: var(--dark);
         }
 
         /* 11 Papers Grid (Bài 2) */
@@ -439,8 +447,8 @@
         }
 
         .paper-card {
-            background: rgba(255, 255, 255, 0.8);
-            border: 1.5px solid rgba(162, 194, 224, 0.15);
+            background: white;
+            border: 1.5px solid rgba(30, 64, 175, 0.15);
             border-radius: 15px;
             padding: 18px;
             transition: var(--transition);
@@ -449,7 +457,6 @@
         .paper-card:hover {
             transform: translateY(-2px);
             border-color: var(--primary);
-            box-shadow: 0 4px 12px rgba(162, 194, 224, 0.1);
         }
 
         .paper-header {
@@ -474,18 +481,18 @@
         }
 
         .badge-type {
-            font-size: 10.5px;
+            font-size: 11px;
             padding: 2px 8px;
             border-radius: 20px;
             font-weight: 600;
         }
-        .badge-type.journal { background: rgba(162, 194, 224, 0.18); color: var(--primary); }
-        .badge-type.book { background: rgba(232, 180, 180, 0.18); color: #c47d7d; }
-        .badge-type.web { background: rgba(255, 245, 204, 0.4); color: #ab8e29; }
-        .badge-type.thesis { background: #e2f0d9; color: #5b8e3b; }
+        .badge-type.journal { background: #dbeafe; color: #1e40af; }
+        .badge-type.book { background: #ffe4e6; color: #9f1239; }
+        .badge-type.web { background: #fef9c3; color: #854d0e; }
+        .badge-type.thesis { background: #dcfce7; color: #166534; }
 
         .badge-rating {
-            font-size: 10.5px;
+            font-size: 11px;
             font-weight: bold;
             padding: 2px 8px;
             border-radius: 20px;
@@ -494,9 +501,9 @@
         }
 
         .paper-desc {
-            font-size: 13.5px;
-            color: #555;
-            background: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            color: var(--dark);
+            background: #f8fafc;
             padding: 10px;
             border-radius: 8px;
             margin: 5px 0 10px 0;
@@ -507,13 +514,41 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
-            font-size: 13px;
+            font-size: 13.5px;
         }
 
-        .analysis-pro { color: #2e692e; }
-        .analysis-con { color: #924040; }
+        .analysis-pro { color: #15803d; font-weight: 600; }
+        .analysis-con { color: #b91c1c; font-weight: 600; }
 
-        /* Prompt Matrix Interactive Explorer (Bài 3) */
+        /* Interactive Folder Simulator UI (Bài 1) */
+        .folder-sim-ui {
+            background: #1e293b;
+            border-radius: 12px;
+            color: #f8fafc;
+            font-family: monospace;
+            padding: 15px;
+            font-size: 13px;
+        }
+        .folder-tree {
+            margin-left: 15px;
+            border-left: 1px dashed #475569;
+            padding-left: 10px;
+        }
+        .folder-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin: 4px 0;
+        }
+        .file-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin: 4px 0 4px 15px;
+            color: #cbd5e1;
+        }
+
+        /* Prompt Matrix (Bài 3) */
         .prompt-tabs {
             display: flex;
             gap: 10px;
@@ -521,8 +556,8 @@
         }
 
         .p-tab-btn {
-            background: rgba(162, 194, 224, 0.15);
-            border: 1px solid var(--secondary);
+            background: #f1f5f9;
+            border: 2.5px solid var(--secondary);
             border-radius: 12px;
             padding: 8px 16px;
             font-family: 'Comfortaa', sans-serif;
@@ -530,6 +565,7 @@
             font-weight: 700;
             cursor: pointer;
             transition: var(--transition);
+            color: var(--dark);
         }
 
         .p-tab-btn.active {
@@ -546,8 +582,8 @@
         }
 
         .p-card {
-            background: rgba(255,255,255,0.7);
-            border: 1.5px solid rgba(162,194,224,0.2);
+            background: white;
+            border: 2px solid rgba(30, 64, 175, 0.15);
             border-radius: 15px;
             padding: 15px;
             position: relative;
@@ -555,11 +591,11 @@
 
         .p-card.advanced {
             border-color: var(--accent);
-            background: rgba(232, 180, 180, 0.05);
+            background: rgba(244, 63, 94, 0.02);
         }
 
         .p-tag {
-            font-size: 10px;
+            font-size: 11px;
             font-weight: bold;
             text-transform: uppercase;
             padding: 2px 8px;
@@ -567,40 +603,29 @@
             display: inline-block;
             margin-bottom: 8px;
         }
-        .p-tag.basic { background: rgba(0,0,0,0.06); color: #666; }
-        .p-tag.improved { background: rgba(162,194,224,0.2); color: var(--primary); }
-        .p-tag.advanced { background: rgba(232, 180, 180, 0.3); color: #b05c5c; }
+        .p-tag.basic { background: #e2e8f0; color: #475569; }
+        .p-tag.improved { background: #dbeafe; color: #1e40af; }
+        .p-tag.advanced { background: #ffe4e6; color: #9f1239; }
 
         .p-text {
-            font-size: 13px;
-            background: white;
+            font-size: 13.5px;
+            background: #f8fafc;
             padding: 10px;
             border-radius: 8px;
-            border: 1px solid #eee;
+            border: 1px solid #e2e8f0;
             margin-bottom: 10px;
             word-break: break-word;
+            color: var(--dark);
+            font-family: monospace;
         }
 
         .p-feedback {
-            font-size: 12.5px;
-            color: #555;
+            font-size: 13.5px;
+            color: var(--dark);
             text-align: justify;
         }
 
-        /* Interactive Quiz Layout (Bài 3) */
-        .interactive-quiz {
-            background: #fafafa;
-            border: 2px solid var(--secondary);
-            border-radius: 15px;
-            padding: 20px;
-            margin-top: 15px;
-        }
-
-        .quiz-question {
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
+        /* Interactive Quiz (Bài 3) */
         .quiz-options {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -610,43 +635,46 @@
 
         .quiz-btn {
             background: white;
-            border: 1px solid var(--secondary);
+            border: 1.5px solid var(--secondary);
             border-radius: 10px;
-            padding: 10px 15px;
+            padding: 12px 15px;
             font-family: inherit;
-            font-size: 13.5px;
+            font-size: 14px;
+            font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
             text-align: left;
+            color: var(--dark);
         }
 
         .quiz-btn:hover {
-            background: var(--secondary);
-            color: white;
+            background: rgba(147, 197, 253, 0.2);
+            border-color: var(--primary);
             transform: translateX(3px);
         }
 
         .quiz-explanation {
-            font-size: 13.5px;
-            padding: 12px;
+            font-size: 14px;
+            padding: 14px;
             border-radius: 8px;
             display: none;
             animation: fadeInWindow 0.4s ease;
+            text-align: justify;
         }
 
         .quiz-explanation.correct {
-            background: rgba(119, 184, 119, 0.15);
-            border: 1px solid #77b877;
-            color: #2e692e;
+            background: #f0fdf4;
+            border: 2px solid #16a34a;
+            color: #14532d;
         }
 
         .quiz-explanation.incorrect {
-            background: rgba(232, 180, 180, 0.2);
-            border: 1px solid var(--accent);
-            color: #924040;
+            background: #fff5f5;
+            border: 2px solid var(--accent);
+            color: #7a1b1b;
         }
 
-        /* Infographic interactive Do's and Dont's (Bài 6) */
+        /* Infographic interactive (Bài 6) */
         .interactive-infographic {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -661,17 +689,17 @@
         }
 
         .info-card.do {
-            background: rgba(119, 184, 119, 0.08);
-            border: 2px solid rgba(119, 184, 119, 0.2);
+            background: #f0fdf4;
+            border: 2px solid rgba(22, 163, 74, 0.3);
         }
 
         .info-card.dont {
-            background: rgba(232, 180, 180, 0.08);
-            border: 2px solid rgba(232, 180, 180, 0.2);
+            background: #fff5f5;
+            border: 2px solid rgba(244, 63, 94, 0.3);
         }
 
         .info-card h5 {
-            font-size: 14.5px;
+            font-size: 15px;
             font-weight: 700;
             margin-bottom: 12px;
             display: flex;
@@ -679,37 +707,38 @@
             gap: 8px;
         }
 
-        .info-card.do h5 { color: #2e692e; }
-        .info-card.dont h5 { color: #924040; }
+        .info-card.do h5 { color: #166534; }
+        .info-card.dont h5 { color: #9f1239; }
 
         .info-list {
             list-style: none;
         }
 
         .info-list li {
-            font-size: 13.5px;
+            font-size: 14px;
             margin-bottom: 10px;
-            padding-left: 20px;
+            padding-left: 22px;
             position: relative;
+            color: var(--dark);
         }
 
         .info-card.do .info-list li::before {
             content: '✔️';
             position: absolute;
             left: 0;
-            color: #2e692e;
-            font-size: 11px;
+            color: #166534;
+            font-size: 12px;
         }
 
         .info-card.dont .info-list li::before {
             content: '❌';
             position: absolute;
             left: 0;
-            color: #924040;
-            font-size: 11px;
+            color: #9f1239;
+            font-size: 12px;
         }
 
-        /* SECTION 3: TỔNG KẾT CHUNG */
+        /* Summary Grid */
         .summary-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -725,19 +754,20 @@
         }
 
         .summary-block p {
-            font-size: 14.5px;
+            font-size: 15px;
             text-align: justify;
             margin-bottom: 15px;
+            color: var(--dark);
         }
 
         .experience-badge {
             display: inline-block;
             background: var(--accent);
             color: white;
-            padding: 6px 16px;
+            padding: 8px 20px;
             border-radius: 30px;
             font-weight: bold;
-            font-size: 13.5px;
+            font-size: 14px;
             margin-top: 5px;
             animation: pulseGlow 2s infinite ease-in-out;
         }
@@ -746,12 +776,13 @@
         footer {
             text-align: center;
             padding: 40px 0;
-            font-size: 13px;
+            font-size: 14px;
             color: var(--primary);
-            border-top: 1px dashed rgba(162, 194, 224, 0.3);
+            border-top: 2px dashed rgba(30, 64, 175, 0.2);
+            font-weight: 600;
         }
 
-        /* Animations Keyframes */
+        /* Animations */
         @keyframes rotateStar {
             0% { transform: rotate(0deg) scale(1); }
             50% { transform: rotate(180deg) scale(1.15); }
@@ -770,30 +801,24 @@
             100% { transform: translateY(0px); }
         }
 
-        @keyframes floatLeftRight {
-            0% { transform: translateX(-10px) translateY(0px); }
-            50% { transform: translateX(15px) translateY(-5px); }
-            100% { transform: translateX(-10px) translateY(0px); }
-        }
-
         @keyframes fadeInWindow {
             from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes pulseGlow {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(232, 180, 180, 0.4); }
-            70% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(232, 180, 180, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(232, 180, 180, 0); }
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.4); }
+            70% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(244, 63, 94, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(244, 63, 94, 0); }
         }
 
-        /* Particle effect */
+        /* Particle trail */
         .click-star {
             position: absolute;
             pointer-events: none;
             font-size: 16px;
-            color: rgba(162, 194, 224, 0.85);
-            text-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+            color: rgba(59, 130, 246, 0.85);
+            text-shadow: 0 0 6px rgba(255, 255, 255, 0.95);
             transform: translate(-50%, -50%);
             animation: starFall 0.8s forwards ease-out;
             z-index: 9999;
@@ -804,13 +829,12 @@
             100% { transform: translate(-50%, calc(-50% + 40px)) scale(0) rotate(180deg); opacity: 0; }
         }
 
-        /* Detail Box for Subsections inside window */
         .p-details-box {
-            background: rgba(162, 194, 224, 0.05);
+            background: #f8fafc;
             border-radius: 12px;
-            padding: 15px;
+            padding: 18px;
             margin-top: 15px;
-            border: 1px solid rgba(162, 194, 224, 0.15);
+            border: 2px solid rgba(30, 64, 175, 0.15);
         }
 
         /* Responsive Layouts */
@@ -895,7 +919,6 @@
         <main>
             <!-- SECTION 1: GIỚI THIỆU & MỤC TIÊU PORTFOLIO -->
             <section id="gioi-thieu" class="glass-panel hero">
-                <div class="cloud-deco" style="top: 10px; right: 20px;">☁️</div>
                 <div class="hero-avatar-container">
                     <div class="hero-deco hd-1">✨</div>
                     <img src="Hình 1.jpg" alt="Trương Ngọc Yến Nhi" class="hero-avatar">
@@ -906,7 +929,7 @@
                     <h1>Trương Ngọc Yến Nhi</h1>
                     
                     <div class="hero-bio">
-                        Chào mừng bạn đã ghé thăm <strong>Digital Portfolio</strong> - cuốn nhật ký số ghi lại hành trình vượt qua các thử thách học thuật trong môn <strong>Nhập môn Công nghệ số và Ứng dụng AI</strong> của mình. Là một sinh viên chuyên ngành Ngôn ngữ Nhật Bản, mình bắt đầu môn học với không ít bỡ ngỡ trước thế giới số. Thế nhưng, từng bài tập đã giúp mình khám phá ra cách công nghệ có thể hỗ trợ tuyệt vời như thế nào cho ngôn ngữ.
+                        Chào mừng bạn đã ghé thăm <strong>Digital Portfolio</strong> - cuốn nhật ký số ghi lại hành trình vượt qua các thử thách học thuật trong học phần <strong>Nhập môn Công nghệ số và Ứng dụng AI</strong> của mình. Là một sinh viên chuyên ngành Ngôn ngữ Nhật Bản, mình bắt đầu môn học với không ít bỡ ngỡ trước thế giới số. Thế nhưng, từng bài tập đã giúp mình khám phá ra cách công nghệ có thể hỗ trợ tuyệt vời như thế nào cho ngôn ngữ.
                     </div>
 
                     <!-- Portfolio Goals Box -->
@@ -924,7 +947,6 @@
 
             <!-- CALL TO ACTION BANNER -->
             <div class="drive-banner">
-                <div class="cloud-deco" style="bottom: 5px; left: 10px;">☁️</div>
                 <h3>📂 Thư Mục Lưu Trữ Minh Chứng Đầy Đủ</h3>
                 <p>Toàn bộ các file bài làm thực hành thô, ảnh chụp màn hình gốc và tài liệu báo cáo của mình đều đã được tải lên và lưu giữ khoa học trên Google Drive chung của lớp.</p>
                 <a href="https://drive.google.com/drive/folders/1kX4bilr3rYW3YvQkdB5VeDmq3_qJvdl_?usp=drive_link" target="_blank" class="btn-drive">
@@ -934,7 +956,7 @@
 
             <!-- SECTION 2: BÁO CÁO DỰ ÁN CHI TIẾT -->
             <section id="du-an">
-                <h2 style="text-align: center; margin-bottom: 30px;">Hồ Sơ Dự Án Học Tập</h2>
+                <h2 style="text-align: center; margin-bottom: 30px; color: var(--primary);">Hồ Sơ Dự Án Học Tập</h2>
                 
                 <div class="dashboard-container">
                     <!-- Left sidebar tabs -->
@@ -968,32 +990,52 @@
                                 <span class="project-badge">Cá nhân</span>
                             </div>
                             
-                            <p style="font-size: 14.5px; text-align: justify; margin-bottom: 15px;">
+                            <p style="font-size: 15px; text-align: justify; margin-bottom: 15px;">
                                 <strong>Mục tiêu:</strong> Làm chủ các thao tác hệ thống cơ bản trên môi trường Windows File Explorer, rèn luyện tư duy tổ chức, phân cấp và quản trị dữ liệu một cách ngăn nắp, khoa học để nâng cao hiệu suất làm việc văn phòng.
                             </p>
 
                             <div class="sub-section-title">📋 Nhật ký thực hiện 12 bước thực hành cụ thể</div>
                             <div class="steps-container">
                                 <div class="step-card"><div class="step-num">1</div><div class="step-txt"><strong>Mở File Explorer:</strong> Nhấn tổ hợp phím <code>Windows + E</code> hoặc click vào biểu tượng thư mục màu vàng trên taskbar.</div></div>
-                                <div class="step-card"><div class="step-num">2</div><div class="step-txt"><strong>Truy cập ổ đĩa:</strong> Ở cột bên trái, nhấp vào This PC, nhấp đúp vào ổ đĩa không phải hệ thống (ổ D: hoặc E:).</div></div>
-                                <div class="step-card"><div class="step-num">3</div><div class="step-txt"><strong>Tạo thư mục mới:</strong> Click chuột phải vào khoảng trống -> New -> Folder. Đặt tên: <code>ThucHanh_TruongNgocYenNhi</code>. Nhấn Enter.</div></div>
-                                <div class="step-card"><div class="step-num">4</div><div class="step-txt"><strong>Vào thư mục vừa tạo:</strong> Nhấp đúp chuột vào thư mục <code>ThucHanh_TruongNgocYenNhi</code> vừa tạo ở bước trên.</div></div>
-                                <div class="step-card"><div class="step-num">5</div><div class="step-txt"><strong>Tạo tệp văn bản:</strong> Nhấp chuột phải vào khoảng trống -> New -> Text Document. Đặt tên là <code>GhiChu.txt</code>.</div></div>
-                                <div class="step-card"><div class="step-num">6</div><div class="step-txt"><strong>Đổi tên tệp:</strong> Nhấp chuột phải vào tệp <code>GhiChu.txt</code> -> chọn Rename. Đổi tên thành <code>GhiChuQuanTrong.txt</code>. Nhấn Enter.</div></div>
-                                <div class="step-card"><div class="step-num">7</div><div class="step-txt"><strong>Tạo thư mục con:</strong> Nhấp chuột phải -> New -> Folder. Đặt tên thư mục con là <code>TaiLieu</code>.</div></div>
+                                <div class="step-card"><div class="step-num">2</div><div class="step-txt"><strong>Truy cập ổ đĩa:</strong> Ở cột bên trái, nhấp vào This PC, nhấp đúp vào một ổ đĩa không phải hệ thống (ví dụ: ổ D: hoặc E:).</div></div>
+                                <div class="step-card"><div class="step-num">3</div><div class="step-txt"><strong>Tạo thư mục mới:</strong> Click chuột phải vào khoảng trống -> chọn New -> Folder. Đặt tên thư mục là: <code>ThucHanh_TruongNgocYenNhi</code>. Nhấn Enter.</div></div>
+                                <div class="step-card"><div class="step-num">4</div><div class="step-txt"><strong>Vào thư mục vừa tạo:</strong> Nhấp đúp chuột vào thư mục <code>ThucHanh_TruongNgocYenNhi</code> vừa tạo ở bước 3.</div></div>
+                                <div class="step-card"><div class="step-num">5</div><div class="step-txt"><strong>Tạo tệp văn bản:</strong> Nhấp chuột phải vào khoảng trống -> chọn New -> Text Document. Đặt tên là <code>GhiChu.txt</code>. Nhấn Enter.</div></div>
+                                <div class="step-card"><div class="step-num">6</div><div class="step-txt"><strong>Đổi tên tệp:</strong> Nhấp chuột phải vào tệp <code>GhiChu.txt</code> -> chọn Rename (hoặc phím F2). Đổi tên thành <code>GhiChuQuanTrong.txt</code>. Nhấn Enter.</div></div>
+                                <div class="step-card"><div class="step-num">7</div><div class="step-txt"><strong>Tạo thư mục con:</strong> Nhấp chuột phải vào khoảng trống -> chọn New -> Folder. Đặt tên thư mục con là <code>TaiLieu</code>.</div></div>
                                 <div class="step-card"><div class="step-num">8</div><div class="step-txt"><strong>Sao chép tệp tin:</strong> Chuột phải vào <code>GhiChuQuanTrong.txt</code> -> Copy. Vào <code>TaiLieu</code> -> Chuột phải -> Paste.</div></div>
-                                <div class="step-card"><div class="step-num">9</div><div class="step-txt"><strong>Di chuyển tệp tin:</strong> Quay lại thư mục gốc, tạo tệp <code>DiChuyen.txt</code>. Chuột phải -> Cut. Vào <code>TaiLieu</code> -> Paste.</div></div>
-                                <div class="step-card"><div class="step-num">10</div><div class="step-txt"><strong>Xóa tệp tin:</strong> Trong thư mục <code>TaiLieu</code>, chuột phải vào tệp <code>GhiChuQuanTrong.txt</code> -> chọn Delete để đưa vào Thùng rác.</div></div>
-                                <div class="step-card"><div class="step-num">11</div><div class="step-txt"><strong>Xóa vĩnh viễn:</strong> Chọn tệp <code>DiChuyen.txt</code>, nhấn giữ phím <code>Shift + Delete</code>, đồng ý trên hộp cảnh báo để xóa vĩnh viễn.</div></div>
-                                <div class="step-card"><div class="step-num">12</div><div class="step-txt"><strong>Khôi phục tệp:</strong> Mở biểu tượng Recycle Bin trên màn hình, chuột phải vào tệp <code>GhiChuQuanTrong.txt</code> -> chọn Restore để tệp trở lại vị trí ban đầu.</div></div>
+                                <div class="step-card"><div class="step-num">9</div><div class="step-txt"><strong>Di chuyển tệp tin:</strong> Tạo tệp <code>DiChuyen.txt</code> ở thư mục gốc. Chuột phải -> chọn Cut. Vào thư mục con <code>TaiLieu</code> -> Chuột phải -> chọn Paste.</div></div>
+                                <div class="step-card"><div class="step-num">10</div><div class="step-txt"><strong>Xóa tệp tin:</strong> Trong thư mục con <code>TaiLieu</code>, nhấp chuột phải vào tệp <code>GhiChuQuanTrong.txt</code> -> chọn Delete để đưa vào Thùng rác.</div></div>
+                                <div class="step-card"><div class="step-num">11</div><div class="step-txt"><strong>Xóa vĩnh viễn:</strong> Chọn tệp <code>DiChuyen.txt</code>, nhấn giữ phím <code>Shift + Delete</code>, bấm "Có" trên hộp cảnh báo để xóa vĩnh viễn.</div></div>
+                                <div class="step-card"><div class="step-num">12</div><div class="step-txt"><strong>Khôi phục tệp:</strong> Mở Recycle Bin trên màn hình nền, nhấp chuột phải vào tệp <code>GhiChuQuanTrong.txt</code> -> chọn Restore để khôi phục về vị trí ban đầu.</div></div>
+                            </div>
+
+                            <!-- INTERACTIVE WIDGET 1 -->
+                            <div class="interactive-widget-box">
+                                <div class="widget-title"><i class="fa-solid fa-hard-drive"></i> Minh họa tương tác: Trình giả lập ổ đĩa ảo tương tác</div>
+                                <p style="font-size: 13.5px; margin-bottom: 12px; color: var(--dark);">Hãy nhấp chuột chạy từng bước thao tác dưới đây để xem sự biến đổi trực quan của cây thư mục ảo bên ổ đĩa (D:):</p>
+                                <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
+                                    <button onclick="runStep1()" class="quiz-btn" style="padding: 6px 12px; font-size:12px;">Bước 3: Tạo thư mục</button>
+                                    <button onclick="runStep2()" class="quiz-btn" style="padding: 6px 12px; font-size:12px;">Bước 5: Tạo tệp ghi chú</button>
+                                    <button onclick="runStep3()" class="quiz-btn" style="padding: 6px 12px; font-size:12px;">Bước 7: Tạo thư mục TaiLieu</button>
+                                    <button onclick="runStep4()" class="quiz-btn" style="padding: 6px 12px; font-size:12px;">Bước 8 & 9: Sao chép/Di chuyển</button>
+                                    <button onclick="runStep5()" class="quiz-btn" style="padding: 6px 12px; font-size:12px;">Bước 10: Xóa tệp</button>
+                                    <button onclick="resetFolderSim()" class="quiz-btn" style="padding: 6px 12px; font-size:12px; background: #ffe4e6; border-color:#fda4af;">Đặt lại ban đầu</button>
+                                </div>
+                                <div class="folder-sim-ui" id="folder-sim-box">
+                                    📁 New Volume (D:)
+                                    <div class="folder-tree" id="sim-tree-content">
+                                        (Ổ đĩa trống)
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="p-details-box">
                                 <strong>💡 Khó khăn, thuận lợi & Bài học rút ra:</strong><br>
                                 <span style="font-size: 13.5px;">
-                                    • <em>Thuận lợi:</em> Hệ điều hành hỗ trợ giao diện trực quan và phím tắt rất nhanh chóng.<br>
-                                    • <em>Khó khăn:</em> Đôi lúc dễ nhầm lẫn giữa sao chép (Copy) và di chuyển (Cut), hoặc thao tác vội vã dẫn đến việc xóa tệp ngoài ý muốn.<br>
-                                    • <em>Bài học:</em> Việc đặt tên tệp tin khoa học cùng cấu trúc thư mục phân tầng hợp lý là mấu chốt để quản lý khối lượng dữ liệu khổng lồ khi nghiên cứu học thuật sau này.
+                                    • <em>Thuận lợi:</em> Giao diện File Explorer trực quan và các phím tắt hệ thống giúp thao tác được thực hiện nhanh chóng.<br>
+                                    • <em>Khó khăn:</em> Cần tập trung cao độ để phân biệt phím tắt sao chép (Copy) và di chuyển (Cut), tránh vô tình ấn nhầm phím xóa hẳn dữ liệu.<br>
+                                    • <em>Bài học:</em> Thói quen quản trị dữ liệu, cách đặt tên file có cấu trúc là viên gạch nền móng đầu tiên để quản lý khối lượng tài liệu học tập khổng lồ ở môi trường đại học.
                                 </span>
                             </div>
                         </div>
@@ -1001,13 +1043,12 @@
                 </div>
             </section>
 
-            <!-- SECTION 3: TỔNG KẾT, KHÓ KHĂN, THUẬN LỢI & BÀI HỌC CHUNG -->
+            <!-- SECTION 3: TỔNG KẾT CHUNG -->
             <section id="tong-ket" class="glass-panel">
-                <div class="cloud-deco" style="top: 20px; left: 30px;">☁️</div>
-                <h2 style="text-align: center; margin-bottom: 35px;">Nhìn Lại Chặng Đường Đã Qua</h2>
+                <h2 style="text-align: center; margin-bottom: 35px; color: var(--primary);">Nhìn Lại Chặng Đường Đã Qua</h2>
                 <div class="summary-grid">
                     <div class="summary-block">
-                        <h3><i class="fa-solid fa-circle-check" style="color: #5b8e3b;"></i> Thuận lợi & Cơ hội</h3>
+                        <h3><i class="fa-solid fa-circle-check" style="color: #16a34a;"></i> Thuận lợi & Cơ hội</h3>
                         <p>
                             • <strong>Sự phát triển vượt bậc của AI:</strong> Hệ sinh thái các công cụ AI hỗ trợ như Gemini, Midjourney và ChatGPT đã hỗ trợ tối đa quy trình tìm kiếm, thiết kế, mở rộng vốn từ học thuật cho sinh viên ngôn ngữ.
                         </p>
@@ -1019,7 +1060,7 @@
                         </p>
                     </div>
                     <div class="summary-block">
-                        <h3><i class="fa-solid fa-triangle-exclamation" style="color: #b05c5c;"></i> Khó khăn & Thách thức</h3>
+                        <h3><i class="fa-solid fa-triangle-exclamation" style="color: var(--accent);"></i> Khó khăn & Thách thức</h3>
                         <p>
                             • <strong>Tính "ảo giác" của trí tuệ nhân tạo:</strong> Khi làm việc với AI, mình thường xuyên đối mặt với các lỗi ảo giác dữ liệu, trích dẫn sai tên tác giả hay bóp méo thuật ngữ Hán Nôm nếu không kiểm chứng chéo kỹ lưỡng.
                         </p>
@@ -1034,7 +1075,7 @@
 
                 <div class="p-details-box" style="margin-top: 20px;">
                     <strong>🎓 Bài học kinh nghiệm sâu sắc nhất:</strong><br>
-                    <p style="font-size: 14px; text-align: justify; margin-top: 5px;">
+                    <p style="font-size: 14.5px; text-align: justify; margin-top: 5px;">
                         Học phần đã giúp mình hiểu ra rằng công cụ công nghệ dù có tinh vi đến đâu thì người viết vẫn đóng vai trò là "Tổng biên tập" - người chịu trách nhiệm cuối cùng về mặt nội dung và tính xác thực lịch sử. Sự thành bại của một dự án trực tuyến chính là sự kết hợp nhuần nhuyễn của kỷ luật cá nhân, tư duy hệ thống và kỹ năng giao tiếp tinh tế chủ động. Trải nghiệm thực tế này đã chuẩn bị cho mình hành trang quý báu để tiến xa hơn trong nghiên cứu ngôn ngữ học sau này.
                     </p>
                     <div class="experience-badge"><i class="fa-solid fa-award"></i> Tự đánh giá mức độ nỗ lực hoàn thành: Xuất sắc (10/10)</div>
@@ -1049,9 +1090,9 @@
         </footer>
     </div>
 
-    <!-- JavaScript xử lý tương tác Dashboard & Quiz -->
+    <!-- JavaScript xử lý tương tác Dashboard, Quiz & Particle -->
     <script>
-        // Data lưu giữ nội dung siêu chi tiết cho 6 bài tập (được cấu trúc thành HTML hoàn chỉnh không cắt bớt)
+        // Data lưu giữ nội dung chi tiết cho 6 bài tập
         const projectData = {
             proj1: `
                 <div class="project-header">
@@ -1059,31 +1100,51 @@
                     <span class="project-badge">Cá nhân</span>
                 </div>
                 
-                <p style="font-size: 14.5px; text-align: justify; margin-bottom: 15px;">
+                <p style="font-size: 15px; text-align: justify; margin-bottom: 15px;">
                     <strong>Mục tiêu:</strong> Làm chủ các thao tác hệ thống cơ bản trên môi trường Windows File Explorer, rèn luyện tư duy tổ chức, phân cấp và quản trị dữ liệu một cách ngăn nắp, khoa học để nâng cao hiệu suất làm việc văn phòng.
                 </p>
 
                 <div class="sub-section-title">📋 Nhật ký thực hiện 12 bước thực hành cụ thể</div>
                 <div class="steps-container">
                     <div class="step-card"><div class="step-num">1</div><div class="step-txt"><strong>Mở File Explorer:</strong> Nhấn tổ hợp phím <code>Windows + E</code> hoặc click vào biểu tượng thư mục màu vàng trên taskbar.</div></div>
-                    <div class="step-card"><div class="step-num">2</div><div class="step-txt"><strong>Truy cập ổ đĩa:</strong> Ở cột bên trái, nhấp vào This PC, nhấp đúp vào ổ đĩa không phải hệ thống (ổ D: hoặc E:).</div></div>
-                    <div class="step-card"><div class="step-num">3</div><div class="step-txt"><strong>Tạo thư mục mới:</strong> Click chuột phải vào khoảng trống -> New -> Folder. Đặt tên: <code>ThucHanh_TruongNgocYenNhi</code>. Nhấn Enter.</div></div>
-                    <div class="step-card"><div class="step-num">4</div><div class="step-txt"><strong>Vào thư mục vừa tạo:</strong> Nhấp đúp chuột vào thư mục <code>ThucHanh_TruongNgocYenNhi</code> vừa tạo ở bước trên.</div></div>
-                    <div class="step-card"><div class="step-num">5</div><div class="step-txt"><strong>Tạo tệp văn bản:</strong> Nhấp chuột phải vào khoảng trống -> New -> Text Document. Đặt tên là <code>GhiChu.txt</code>.</div></div>
-                    <div class="step-card"><div class="step-num">6</div><div class="step-txt"><strong>Đổi tên tệp:</strong> Nhấp chuột phải vào tệp <code>GhiChu.txt</code> -> chọn Rename. Đổi tên thành <code>GhiChuQuanTrong.txt</code>. Nhấn Enter.</div></div>
-                    <div class="step-card"><div class="step-num">7</div><div class="step-txt"><strong>Tạo thư mục con:</strong> Nhấp chuột phải -> New -> Folder. Đặt tên thư mục con là <code>TaiLieu</code>.</div></div>
+                    <div class="step-card"><div class="step-num">2</div><div class="step-txt"><strong>Truy cập ổ đĩa:</strong> Ở cột bên trái, nhấp vào This PC, nhấp đúp vào một ổ đĩa không phải hệ thống (ví dụ: ổ D: hoặc E:).</div></div>
+                    <div class="step-card"><div class="step-num">3</div><div class="step-txt"><strong>Tạo thư mục mới:</strong> Click chuột phải vào khoảng trống -> chọn New -> Folder. Đặt tên thư mục là: <code>ThucHanh_TruongNgocYenNhi</code>. Nhấn Enter.</div></div>
+                    <div class="step-card"><div class="step-num">4</div><div class="step-txt"><strong>Vào thư mục vừa tạo:</strong> Nhấp đúp chuột vào thư mục <code>ThucHanh_TruongNgocYenNhi</code> vừa tạo ở bước 3.</div></div>
+                    <div class="step-card"><div class="step-num">5</div><div class="step-txt"><strong>Tạo tệp văn bản:</strong> Nhấp chuột phải vào khoảng trống -> chọn New -> Text Document. Đặt tên là <code>GhiChu.txt</code>. Nhấn Enter.</div></div>
+                    <div class="step-card"><div class="step-num">6</div><div class="step-txt"><strong>Đổi tên tệp:</strong> Nhấp chuột phải vào tệp <code>GhiChu.txt</code> -> chọn Rename (hoặc phím F2). Đổi tên thành <code>GhiChuQuanTrong.txt</code>. Nhấn Enter.</div></div>
+                    <div class="step-card"><div class="step-num">7</div><div class="step-txt"><strong>Tạo thư mục con:</strong> Nhấp chuột phải vào khoảng trống -> chọn New -> Folder. Đặt tên thư mục con là <code>TaiLieu</code>.</div></div>
                     <div class="step-card"><div class="step-num">8</div><div class="step-txt"><strong>Sao chép tệp tin:</strong> Chuột phải vào <code>GhiChuQuanTrong.txt</code> -> Copy. Vào <code>TaiLieu</code> -> Chuột phải -> Paste.</div></div>
-                    <div class="step-card"><div class="step-num">9</div><div class="step-txt"><strong>Di chuyển tệp tin:</strong> Quay lại thư mục gốc, tạo tệp <code>DiChuyen.txt</code>. Chuột phải -> Cut. Vào <code>TaiLieu</code> -> Paste.</div></div>
-                    <div class="step-card"><div class="step-num">10</div><div class="step-txt"><strong>Xóa tệp tin:</strong> Trong thư mục <code>TaiLieu</code>, chuột phải vào tệp <code>GhiChuQuanTrong.txt</code> -> chọn Delete để đưa vào Thùng rác.</div></div>
-                    <div class="step-card"><div class="step-num">11</div><div class="step-txt"><strong>Xóa vĩnh viễn:</strong> Chọn tệp <code>DiChuyen.txt</code>, nhấn giữ phím <code>Shift + Delete</code>, đồng ý trên hộp cảnh báo để xóa vĩnh viễn.</div></div>
-                    <div class="step-card"><div class="step-num">12</div><div class="step-txt"><strong>Khôi phục tệp:</strong> Mở biểu tượng Recycle Bin trên màn hình, chuột phải vào tệp <code>GhiChuQuanTrong.txt</code> -> chọn Restore để tệp trở lại vị trí ban đầu.</div></div>
+                    <div class="step-card"><div class="step-num">9</div><div class="step-txt"><strong>Di chuyển tệp tin:</strong> Tạo tệp <code>DiChuyen.txt</code> ở thư mục gốc. Chuột phải -> chọn Cut. Vào thư mục con <code>TaiLieu</code> -> Chuột phải -> chọn Paste.</div></div>
+                    <div class="step-card"><div class="step-num">10</div><div class="step-txt"><strong>Xóa tệp tin:</strong> Trong thư mục con <code>TaiLieu</code>, nhấp chuột phải vào tệp <code>GhiChuQuanTrong.txt</code> -> chọn Delete để đưa vào Thùng rác.</div></div>
+                    <div class="step-card"><div class="step-num">11</div><div class="step-txt"><strong>Xóa vĩnh viễn:</strong> Chọn tệp <code>DiChuyen.txt</code>, nhấn giữ phím <code>Shift + Delete</code>, bấm "Có" trên hộp cảnh báo để xóa vĩnh viễn.</div></div>
+                    <div class="step-card"><div class="step-num">12</div><div class="step-txt"><strong>Khôi phục tệp:</strong> Mở Recycle Bin trên màn hình nền, nhấp chuột phải vào tệp <code>GhiChuQuanTrong.txt</code> -> chọn Restore để khôi phục về vị trí ban đầu.</div></div>
+                </div>
+
+                <!-- INTERACTIVE WIDGET 1 -->
+                <div class="interactive-widget-box">
+                    <div class="widget-title"><i class="fa-solid fa-hard-drive"></i> Minh họa tương tác: Trình giả lập ổ đĩa ảo tương tác</div>
+                    <p style="font-size: 13.5px; margin-bottom: 12px; color: var(--dark);">Hãy nhấp chuột chạy từng bước thao tác dưới đây để xem sự biến đổi trực quan của cây thư mục ảo bên ổ đĩa (D:):</p>
+                    <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
+                        <button onclick="runStep1()" class="quiz-btn" style="padding: 6px 12px; font-size:12px;">Bước 3: Tạo thư mục</button>
+                        <button onclick="runStep2()" class="quiz-btn" style="padding: 6px 12px; font-size:12px;">Bước 5: Tạo tệp ghi chú</button>
+                        <button onclick="runStep3()" class="quiz-btn" style="padding: 6px 12px; font-size:12px;">Bước 7: Tạo thư mục TaiLieu</button>
+                        <button onclick="runStep4()" class="quiz-btn" style="padding: 6px 12px; font-size:12px;">Bước 8 & 9: Sao chép/Di chuyển</button>
+                        <button onclick="runStep5()" class="quiz-btn" style="padding: 6px 12px; font-size:12px;">Bước 10: Xóa tệp</button>
+                        <button onclick="resetFolderSim()" class="quiz-btn" style="padding: 6px 12px; font-size:12px; background: #ffe4e6; border-color:#fda4af;">Đặt lại ban đầu</button>
+                    </div>
+                    <div class="folder-sim-ui" id="folder-sim-box">
+                        📁 New Volume (D:)
+                        <div class="folder-tree" id="sim-tree-content">
+                            (Ổ đĩa trống)
+                        </div>
+                    </div>
                 </div>
 
                 <div class="p-details-box">
                     <strong>💡 Khó khăn, thuận lợi & Bài học rút ra:</strong><br>
                     <span style="font-size: 13.5px;">
                         • <em>Thuận lợi:</em> Hệ điều hành hỗ trợ giao diện trực quan và phím tắt rất nhanh chóng.<br>
-                        • <em>Khó khăn:</em> Đôi lúc dễ nhầm lẫn giữa sao chép (Copy) và di chuyển (Cut), hoặc thao tác vội vã dẫn đến việc xóa tệp ngoài ý muốn.<br>
+                        • <em>Khó khăn:</em> Cần tập trung cao độ để phân biệt phím tắt sao chép (Copy) và di chuyển (Cut), tránh vô tình ấn nhầm phím xóa hẳn dữ liệu.<br>
                         • <em>Bài học:</em> Việc đặt tên tệp tin khoa học cùng cấu trúc thư mục phân tầng hợp lý là mấu chốt để quản lý khối lượng dữ liệu khổng lồ khi nghiên cứu học thuật sau này.
                     </span>
                 </div>
@@ -1094,186 +1155,23 @@
                     <span class="project-badge">Dữ liệu học thuật</span>
                 </div>
                 
-                <p style="font-size: 14.5px; text-align: justify; margin-bottom: 15px;">
+                <p style="font-size: 15px; text-align: justify; margin-bottom: 15px;">
                     <strong>Mục tiêu:</strong> Phát triển tư duy phân tích, tìm kiếm dữ liệu học thuật chính thống trên các thư viện số quốc tế và tiến hành thẩm định nghiêm ngặt độ tin cậy của 11 nguồn tài liệu học thuật theo định dạng trích dẫn chuẩn Harvard.
                 </p>
 
-                <div class="sub-section-title">📊 Chi tiết thẩm định 11 tài liệu học thuật & báo cáo thực tế</div>
-                <div class="papers-container">
-                    <!-- Paper 1 -->
-                    <div class="paper-card">
-                        <div class="paper-header">
-                            <span class="paper-title">1. George & Thomas (2023)</span>
-                            <div class="paper-meta">
-                                <span class="badge-type journal">Tạp chí khoa học</span>
-                                <span class="badge-rating">Độ tin cậy: Xuất sắc</span>
-                            </div>
-                        </div>
-                        <div class="paper-desc">Phân tích tiêu chí kiểm định: Scopus Q1. Phương pháp định lượng mô hình cấu trúc tuyến tính rõ ràng (N = 450). Lượt trích dẫn: 78.</div>
-                        <div class="paper-analysis">
-                            <div class="analysis-pro"><strong>Ưu điểm:</strong> Mô hình cấu trúc tuyến tính cực kỳ rõ ràng, đáng tin cậy.</div>
-                            <div class="analysis-con"><strong>Nhược điểm:</strong> Phạm vi nghiên cứu bị giới hạn trong khu vực Đông Nam Á.</div>
-                        </div>
+                <!-- INTERACTIVE WIDGET 2 -->
+                <div class="interactive-widget-box">
+                    <div class="widget-title"><i class="fa-solid fa-filter"></i> Minh họa tương tác: Bộ lọc ma trận tài liệu thông minh</div>
+                    <p style="font-size: 13.5px; margin-bottom: 12px; color: var(--dark);">Lọc nhanh các nguồn tài liệu theo nhóm để tìm kiếm nguồn tham khảo chất lượng nhất:</p>
+                    <div style="display: flex; gap: 8px; margin-bottom: 15px; flex-wrap: wrap;">
+                        <button onclick="filterPapers('all')" class="quiz-btn" style="padding: 6px 12px; font-size:12px;">Tất cả (11)</button>
+                        <button onclick="filterPapers('journal')" class="quiz-btn" style="padding: 6px 12px; font-size:12px;">Tạp chí khoa học (6)</button>
+                        <button onclick="filterPapers('book')" class="quiz-btn" style="padding: 6px 12px; font-size:12px;">Sách chuyên khảo (2)</button>
+                        <button onclick="filterPapers('web')" class="quiz-btn" style="padding: 6px 12px; font-size:12px;">Báo cáo / Internet (2)</button>
+                        <button onclick="filterPapers('thesis')" class="quiz-btn" style="padding: 6px 12px; font-size:12px;">Luận văn (1)</button>
                     </div>
-
-                    <!-- Paper 2 -->
-                    <div class="paper-card">
-                        <div class="paper-header">
-                            <span class="paper-title">2. Nguyễn & Lê (2025)</span>
-                            <div class="paper-meta">
-                                <span class="badge-type journal">Tạp chí khoa học</span>
-                                <span class="badge-rating">Độ tin cậy: Xuất sắc</span>
-                            </div>
-                        </div>
-                        <div class="paper-desc">Phân tích tiêu chí kiểm định: Được đăng tải bởi Hội đồng Giáo sư tính điểm. Phương pháp nghiên cứu hỗn hợp mới nhất xuất bản năm 2025.</div>
-                        <div class="paper-analysis">
-                            <div class="analysis-pro"><strong>Ưu điểm:</strong> Sát thực tế văn hóa doanh nghiệp tại Việt Nam.</div>
-                            <div class="analysis-con"><strong>Nhược điểm:</strong> Dung lượng mẫu định tính còn tương đối nhỏ.</div>
-                        </div>
-                    </div>
-
-                    <!-- Paper 3 -->
-                    <div class="paper-card">
-                        <div class="paper-header">
-                            <span class="paper-title">3. Al-Omari (2024)</span>
-                            <div class="paper-meta">
-                                <span class="badge-type journal">Tạp chí khoa học</span>
-                                <span class="badge-rating">Độ tin cậy: Xuất sắc</span>
-                            </div>
-                        </div>
-                        <div class="paper-desc">Phân tích tiêu chí kiểm định: Thuộc hệ thống CSDL uy tín Emerald Insight. Cronbach's Alpha đạt chuẩn. Lượt trích dẫn: 34.</div>
-                        <div class="paper-analysis">
-                            <div class="analysis-pro"><strong>Ưu điểm:</strong> Bộ công cụ đo lường và thang đo được chuẩn hóa quốc tế.</div>
-                            <div class="analysis-con"><strong>Nhược điểm:</strong> Tập trung nhiều vào lý thuyết, ít đề cập tới các biến số cảm xúc.</div>
-                        </div>
-                    </div>
-
-                    <!-- Paper 4 -->
-                    <div class="paper-card">
-                        <div class="paper-header">
-                            <span class="paper-title">4. Smith et al. (2022)</span>
-                            <div class="paper-meta">
-                                <span class="badge-type journal">Tạp chí khoa học</span>
-                                <span class="badge-rating">Độ tin cậy: Xuất sắc</span>
-                            </div>
-                        </div>
-                        <div class="paper-desc">Phân tích tiêu chí kiểm định: Hệ thống Frontiers (Peer-reviewed). Tiếp cận góc độ tâm lý học Gen Z chuyên sâu. Trích dẫn > 120.</div>
-                        <div class="paper-analysis">
-                            <div class="analysis-pro"><strong>Ưu điểm:</strong> Giải mã sâu sắc tâm lý học về hiệu ứng "Cô lập kỹ thuật số".</div>
-                            <div class="analysis-con"><strong>Nhược điểm:</strong> Số liệu thu thập ngay sau đại dịch, có tính thời điểm cao.</div>
-                        </div>
-                    </div>
-
-                    <!-- Paper 5 -->
-                    <div class="paper-card">
-                        <div class="paper-header">
-                            <span class="paper-title">5. Zhao (2025)</span>
-                            <div class="paper-meta">
-                                <span class="badge-type journal">Tạp chí khoa học</span>
-                                <span class="badge-rating">Độ tin cậy: Tốt</span>
-                            </div>
-                        </div>
-                        <div class="paper-desc">Phân tích tiêu chí kiểm định: Danh mục Springer Nature uy tín. Thực hiện so sánh đa thế hệ (Gen Y vs Gen Z).</div>
-                        <div class="paper-analysis">
-                            <div class="analysis-pro"><strong>Ưu điểm:</strong> Đối chiếu rõ nét sự khác biệt về kỳ vọng linh hoạt giữa các thế hệ.</div>
-                            <div class="analysis-con"><strong>Nhược điểm:</strong> Áp dụng phương pháp lấy mẫu thuận tiện, tính phổ quát chưa cao.</div>
-                        </div>
-                    </div>
-
-                    <!-- Paper 6 -->
-                    <div class="paper-card">
-                        <div class="paper-header">
-                            <span class="paper-title">6. Kim & Park (2026)</span>
-                            <div class="paper-meta">
-                                <span class="badge-type journal">Tạp chí khoa học</span>
-                                <span class="badge-rating">Độ tin cậy: Xuất sắc</span>
-                            </div>
-                        </div>
-                        <div class="paper-desc">Phân tích tiêu chí kiểm định: Xuất bản đầu năm 2026 trên hệ thống uy tín ScienceDirect. Khảo sát thực tế ứng dụng AI trong Hybrid Work.</div>
-                        <div class="paper-analysis">
-                            <div class="analysis-pro"><strong>Ưu điểm:</strong> Cập nhật xu hướng AI và công nghệ mới nhất trong môi trường làm việc trực tuyến.</div>
-                            <div class="analysis-con"><strong>Nhược điểm:</strong> Do là xu hướng mới nên chưa có nhiều nghiên cứu thực nghiệm đối chứng lâu dài.</div>
-                        </div>
-                    </div>
-
-                    <!-- Paper 7 -->
-                    <div class="paper-card">
-                        <div class="paper-header">
-                            <span class="paper-title">7. Armstrong & Taylor (2021)</span>
-                            <div class="paper-meta">
-                                <span class="badge-type book">Sách chuyên khảo</span>
-                                <span class="badge-rating">Độ tin cậy: Xuất sắc</span>
-                            </div>
-                        </div>
-                        <div class="paper-desc">Phân tích tiêu chí kiểm định: NXB Kogan Page (London). Tác giả đầu ngành quản trị nhân sự (HRM). Hệ thống lý thuyết kinh điển vững chắc.</div>
-                        <div class="paper-analysis">
-                            <div class="analysis-pro"><strong>Ưu điểm:</strong> Khung lý thuyết và mô hình quản trị cực kỳ vững chắc và bài bản.</div>
-                            <div class="analysis-con"><strong>Nhược điểm:</strong> Thiếu số liệu thực tế cập nhật về làn sóng công nghệ mới năm 2026.</div>
-                        </div>
-                    </div>
-
-                    <!-- Paper 8 -->
-                    <div class="paper-card">
-                        <div class="paper-header">
-                            <span class="paper-title">8. Gratton (2022)</span>
-                            <div class="paper-meta">
-                                <span class="badge-type book">Sách chuyên khảo</span>
-                                <span class="badge-rating">Độ tin cậy: Tốt</span>
-                            </div>
-                        </div>
-                        <div class="paper-desc">Phân tích tiêu chí kiểm định: NXB Harvard Business Review Press. Tác giả là Giáo sư danh tiếng tại London Business School.</div>
-                        <div class="paper-analysis">
-                            <div class="analysis-pro"><strong>Ưu điểm:</strong> Mô hình thực tiễn cao, hướng dẫn từng bước áp dụng cho nhà quản lý.</div>
-                            <div class="analysis-con"><strong>Nhược điểm:</strong> Thiếu các kiểm định toán học định lượng để tăng độ chặt chẽ của mô hình.</div>
-                        </div>
-                    </div>
-
-                    <!-- Paper 9 -->
-                    <div class="paper-card">
-                        <div class="paper-header">
-                            <span class="paper-title">9. Deloitte Global (2025)</span>
-                            <div class="paper-meta">
-                                <span class="badge-type web">Nguồn mở Internet</span>
-                                <span class="badge-rating">Độ tin cậy: Tốt</span>
-                            </div>
-                        </div>
-                        <div class="paper-desc">Phân tích tiêu chí kiểm định: Báo cáo của tập đoàn tư vấn chiến lược hàng đầu Deloitte. Khảo sát quy mô khổng lồ N = 22.000 toàn cầu.</div>
-                        <div class="paper-analysis">
-                            <div class="analysis-pro"><strong>Ưu điểm:</strong> Quy mô mẫu khảo sát khổng lồ, tính thực tế và xu hướng cập nhật cao.</div>
-                            <div class="analysis-con"><strong>Nhược điểm:</strong> Tài liệu không trải qua quy trình bình duyệt hàn lâm khắt khe.</div>
-                        </div>
-                    </div>
-
-                    <!-- Paper 10 -->
-                    <div class="paper-card">
-                        <div class="paper-header">
-                            <span class="paper-title">10. McKinsey & Company (2024)</span>
-                            <div class="paper-meta">
-                                <span class="badge-type web">Nguồn mở Internet</span>
-                                <span class="badge-rating">Độ tin cậy: Tốt</span>
-                            </div>
-                        </div>
-                        <div class="paper-desc">Phân tích tiêu chí kiểm định: Viện nghiên cứu McKinsey Global Institute. Tập trung phân tích chuyên sâu vào các khía cạnh kinh tế vĩ mô.</div>
-                        <div class="paper-analysis">
-                            <div class="analysis-pro"><strong>Ưu điểm:</strong> Phân tích sâu sắc khía cạnh tối ưu hóa chi phí vận hành cho doanh nghiệp.</div>
-                            <div class="analysis-con"><strong>Nhược điểm:</strong> Bản chất là một báo cáo thương mại, cần kết hợp các nguồn nghiên cứu học thuật khác.</div>
-                        </div>
-                    </div>
-
-                    <!-- Paper 11 -->
-                    <div class="paper-card">
-                        <div class="paper-header">
-                            <span class="paper-title">11. Phạm (2024)</span>
-                            <div class="paper-meta">
-                                <span class="badge-type thesis">Luận văn học thuật</span>
-                                <span class="badge-rating">Độ tin cậy: Khá</span>
-                            </div>
-                        </div>
-                        <div class="paper-desc">Phân tích tiêu chí kiểm định: Luận văn Thạc sĩ trường ĐH Kinh tế Quốc dân. Khảo sát thực tế 200 nhân sự truyền thông tại Hà Nội.</div>
-                        <div class="paper-analysis">
-                            <div class="analysis-pro"><strong>Ưu điểm:</strong> Đề xuất các giải pháp vô cùng thực tế, sát sườn với bối cảnh địa phương.</div>
-                            <div class="analysis-con"><strong>Nhược điểm:</strong> Phạm vi lưu hành nội bộ trường, độ phổ biến khoa học còn hạn chế.</div>
-                        </div>
+                    <div class="papers-container" id="papers-filter-box">
+                        <!-- Sẽ render động bằng JS bên dưới -->
                     </div>
                 </div>
 
@@ -1292,103 +1190,121 @@
                     <span class="project-badge">Kỹ thuật Prompt</span>
                 </div>
                 
-                <p style="font-size: 14.5px; text-align: justify; margin-bottom: 15px;">
-                    <strong>Mục tiêu:</strong> Làm chủ kỹ năng xây dựng câu lệnh (Prompt Engineering) học thuật theo bộ khung tư duy <strong>C.A.S.E (Context, Act, Sample, Exact)</strong>, so sánh hiệu quả giữa Prompt Cơ bản, Cải tiến và Nâng cao để áp dụng trực tiếp cho 3 tác vụ tự học tiếng Nhật.
+                <p style="font-size: 15px; text-align: justify; margin-bottom: 15px;">
+                    <strong>Mục tiêu:</strong> Nghiên cứu học hỏi cách viết Prompt học thuật chuyên sâu theo bộ khung <strong>C.A.S.E (Context, Act, Sample, Exact)</strong>, áp dụng cho 3 tác vụ tự học ngôn ngữ Nhật N4 nhằm giải phóng hiệu năng tự động hóa của AI.
                 </p>
 
+                <div class="sub-section-title">📘 Chi tiết ma trận so sánh 3 tác vụ học tập</div>
+                
                 <!-- Prompt Tabs -->
                 <div class="prompt-tabs">
-                    <button class="p-tab-btn active" onclick="switchPrompt(event, 'task1')">Tác vụ 1: Tóm tắt</button>
+                    <button class="p-tab-btn active" onclick="switchPrompt(event, 'task1')">Tác vụ 1: Tóm tắt bài đọc</button>
                     <button class="p-tab-btn" onclick="switchPrompt(event, 'task2')">Tác vụ 2: Kính ngữ Keigo</button>
-                    <button class="p-tab-btn" onclick="switchPrompt(event, 'task3')">Tác vụ 3: Tạo trắc nghiệm bẫy</button>
+                    <button class="p-tab-btn" onclick="switchPrompt(event, 'task3')">Tác vụ 3: Thiết kế câu hỏi bẫy</button>
                 </div>
 
                 <div id="prompt-content">
                     <!-- Task 1 Default -->
                     <div id="task1" class="prompt-tab-content" style="display: block;">
-                        <p style="font-size:13.5px; margin-bottom:10px;"><strong>Tác vụ 1: Tóm tắt bài đọc đọc hiểu N4 tiếng Nhật.</strong> Bản chất là sàng lọc thông tin thô thành luận điểm logic.</p>
+                        <p style="font-size:13.5px; margin-bottom:10px; color: var(--dark);"><strong>Tác vụ 1: Tóm tắt bài đọc đọc hiểu N4 dài 1000 từ.</strong> Đoạn văn thô gốc mô tả công việc làm thêm tại tiệm hoa (駅の近くの花屋).</p>
                         <div class="prompt-matrix-card">
                             <div class="p-card">
                                 <span class="p-tag basic">Cơ bản</span>
                                 <div class="p-text">"Tóm tắt bài đọc tiếng Nhật ngắn này giúp tôi bằng tiếng Việt."</div>
-                                <div class="p-feedback"><strong>Kết quả:</strong> AI dịch thô vụng về hoặc cắt ghép các câu ngẫu nhiên. Bản tóm tắt rời rạc, làm mất đi mạch logic ngầm và sắc thái biểu cảm của tác giả.</div>
+                                <div class="p-feedback"><strong>Kết quả thô đầu ra:</strong> AI dịch thô vụng về hoặc chỉ cắt ghép các câu văn có sẵn mà làm mất đi mối quan hệ nhân quả và mạch lập luận ngầm của tác giả.</div>
                             </div>
                             <div class="p-card">
                                 <span class="p-tag improved">Cải tiến</span>
                                 <div class="p-text">"Hãy tóm tắt bài đọc N4 sau đây thành 3 luận điểm chính bằng tiếng Việt. Sử dụng gạch đầu dòng."</div>
-                                <div class="p-feedback"><strong>Kết quả:</strong> Độ dài tóm tắt vừa phải, lọc được ý chính nhưng cấu trúc còn đơn điệu, chưa làm nổi bật được tư tưởng cốt lõi và lập luận ẩn sâu của tác giả.</div>
+                                <div class="p-feedback"><strong>Kết quả cải tiến:</strong> Đầu ra được phân đoạn có cấu trúc, nhưng còn đơn điệu, không làm nổi bật được tư tưởng cốt lõi của tác giả.</div>
                             </div>
                             <div class="p-card advanced">
-                                <span class="p-tag advanced">Nâng cao (C.A.S.E)</span>
-                                <div class="p-text">"Bạn là chuyên gia phân tích ngôn ngữ học và biên dịch viên cao cấp Nhật - Việt. Tóm tắt bài luận dưới đây qua 3 bước: Bước 1: Xác định luận đề chính; Bước 2: Trích xuất mạch lập luận (đối lập/bổ trợ); Bước 3: Tổng hợp tinh gọn..."</div>
-                                <div class="p-feedback"><strong>Kết quả:</strong> Tách bạch rõ ràng giữa Luận đề - Sơ đồ mạch lập luận - Từ khóa cốt lõi. Giúp người học nhanh chóng nắm trọn bố cục văn bản, hiểu ngầm tư tưởng tác giả.</div>
+                                <span class="p-tag advanced">Nâng cao</span>
+                                <div class="p-text">"Bạn là một chuyên gia phân tích ngôn ngữ học Nhật-Việt... Hãy thực hiện 3 bước: Bước 1: Xác định luận đề cốt lõi; Bước 2: Chỉ rõ mạch lập luận (đối lập/bổ trợ); Bước 3: Xuất cấu trúc (Luận đề - Sơ đồ tư duy - Từ khóa)..."</div>
+                                <div class="p-feedback"><strong>Kết quả vượt trội:</strong> Tách bạch rõ ràng Luận đề - Sơ đồ tư duy - 4 từ khóa cốt lõi (tiệm hoa gần ga, ghi nhớ giá hoa, xua tan mệt mỏi, ước mơ tương lai), giúp người học nắm bắt sâu sắc bố cục.</div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Task 2 -->
                     <div id="task2" class="prompt-tab-content" style="display: none;">
-                        <p style="font-size:13.5px; margin-bottom:10px;"><strong>Tác vụ 2: Giải thích khái niệm ngữ pháp kính ngữ Keigo.</strong> Chuyển cấu trúc trừu tượng thành kiến thức dễ nhớ.</p>
+                        <p style="font-size:13.5px; margin-bottom:10px; color: var(--dark);"><strong>Tác vụ 2: Giải thích khái niệm Kính ngữ phức tạp (Keigo).</strong> Chuyển đổi cấu trúc trừu tượng thành sơ đồ tư duy thực tiễn.</p>
                         <div class="prompt-matrix-card">
                             <div class="p-card">
                                 <span class="p-tag basic">Cơ bản</span>
                                 <div class="p-text">"Giải thích các kính ngữ trong tiếng Nhật."</div>
-                                <div class="p-feedback"><strong>Kết quả:</strong> Định nghĩa khô khan rập khuôn như chép từ từ điển. Không có ví dụ, sinh viên học vẹt, đọc xong vẫn mơ hồ và không ứng dụng thực tế được.</div>
+                                <div class="p-feedback"><strong>Kết quả thô đầu ra:</strong> Định nghĩa rập khuôn khô khan như sách từ điển. Sinh viên đọc xong vẫn mơ hồ không hiểu bản chất văn hóa ứng xử.</div>
                             </div>
                             <div class="p-card">
                                 <span class="p-tag improved">Cải tiến</span>
                                 <div class="p-text">"Hãy giải thích ngữ pháp kính ngữ trong tiếng Nhật cho sinh viên ở trình độ hiểu, kèm theo 2 ví dụ cụ thể."</div>
-                                <div class="p-feedback"><strong>Kết quả:</strong> Có cấu trúc rõ ràng hơn và kèm ví dụ, nhưng mới chỉ giải thích phần ngọn ngữ pháp, chưa giải quyết được gốc rễ tư duy và bản chất văn hóa ngữ cảnh.</div>
+                                <div class="p-feedback"><strong>Kết quả cải tiến:</strong> Phân biệt được Tôn kính ngữ và Khiêm nhường ngữ thông qua 2 ví dụ hành động (Xem/Đọc và Đi/Đến) nhưng chưa làm rõ bản chất tư duy.</div>
                             </div>
                             <div class="p-card advanced">
-                                <span class="p-tag advanced">Nâng cao (C.A.S.E)</span>
-                                <div class="p-text">"Bạn là giáo sư ngôn ngữ học Nhật Bản có phương pháp sư phạm xuất sắc. Giải thích Kính ngữ theo trình tự: Bước 1: Ẩn dụ đời sống (khoảng cách an toàn lái xe, Ma - 間); Bước 2: Công thức bản chất hành vi tác động; Bước 3: Phân tích tâm lý 'Cảm thấy bị làm phiền' (Meiwaku - 迷惑) qua bị động trực tiếp và gián tiếp..."</div>
-                                <div class="p-feedback"><strong>Kết quả:</strong> Sử dụng phương pháp ẩn dụ trực quan, bóc tách sâu sắc tâm lý của người Nhật (giữ khoảng cách an toàn, tránh gây phiền nhiễu) đằng sau việc dùng Kính ngữ và Bị động thể hại.</div>
+                                <span class="p-tag advanced">Nâng cao</span>
+                                <div class="p-text">"Bạn là một giáo sư ngôn ngữ học Nhật Bản có phương pháp sư phạm xuất sắc... Trình bày theo 3 bước: Bước 1: Ẩn dụ khoảng cách an toàn lái xe (Ma - 間); Bước 2: Công thức vị thế xã hội; Bước 3: Tâm lý Meiwaku (迷惑) qua bị động hại..."</div>
+                                <div class="p-feedback"><strong>Kết quả vượt trội:</strong> Bóc tách xuất sắc tâm lý học văn hóa của người Nhật. Giải thích kính ngữ không phải ép buộc mà là nghệ thuật ứng xử để giữ gìn sự hòa hợp xã hội (Wa - 和).</div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Task 3 -->
                     <div id="task3" class="prompt-tab-content" style="display: none;">
-                        <p style="font-size:13.5px; margin-bottom:10px;"><strong>Tác vụ 3: Tạo bộ câu hỏi ôn tập chủ đề Tiếng Nhật N4.</strong> Kích hoạt bộ nhớ chủ động.</p>
+                        <p style="font-size:13.5px; margin-bottom:10px; color: var(--dark);"><strong>Tác vụ 3: Thiết kế bộ câu hỏi ôn tập JLPT N4.</strong> Kiểm tra tư duy phân hóa bằng bẫy nhiễu tinh tế.</p>
                         <div class="prompt-matrix-card">
                             <div class="p-card">
                                 <span class="p-tag basic">Cơ bản</span>
                                 <div class="p-text">"Tạo 10 câu hỏi trắc nghiệm ngữ pháp tiếng Nhật N4."</div>
-                                <div class="p-feedback"><strong>Kết quả:</strong> Câu hỏi quá dễ, bẫy nhiễu ngô nghê (đưa nhầm từ vựng vào câu ngữ pháp). Không có phần giải thích chi tiết đáp án.</div>
+                                <div class="p-feedback"><strong>Kết quả thô đầu ra:</strong> Câu hỏi quá dễ, bẫy nhiễu ngô nghê mang tính chắp vá từ vựng vào câu ngữ pháp, không kiểm tra được tư duy.</div>
                             </div>
                             <div class="p-card">
                                 <span class="p-tag improved">Cải tiến</span>
                                 <div class="p-text">"Soạn 10 câu trắc nghiệm 4 lựa chọn A, B, C, D để phân biệt các mẫu câu Nghe nói N4: ～そうです, ～ようです. Có đáp án."</div>
-                                <div class="p-feedback"><strong>Kết quả:</strong> Phân loại đúng chủ đề yêu cầu nhưng câu hỏi thiên về kiểm tra mẹo chia thì cơ bản, thiếu tính phân hóa và thử thách tư duy phản biện.</div>
+                                <div class="p-feedback"><strong>Kết quả cải tiến:</strong> Có phân biệt chủ đề bẫy chia động từ cơ bản, nhưng thiếu phân tích vì sao đáp án này đúng và phương án kia sai.</div>
                             </div>
                             <div class="p-card advanced">
-                                <span class="p-tag advanced">Nâng cao (C.A.S.E)</span>
-                                <div class="p-text">"Bạn là chuyên gia khảo thí ngôn ngữ cao cấp JLPT N4. Hãy soạn bộ câu hỏi gồm 5 câu trắc nghiệm phân hóa mạnh về cụm ～そうです, ～ようです. Bẫy đánh lạc hướng tinh tế dựa trên tư duy sai lệch của sinh viên Việt Nam..."</div>
-                                <div class="p-feedback"><strong>Kết quả:</strong> Đạt tiêu chuẩn khảo thí cao cấp. Bẫy nhiễu tinh vi (nhầm lẫn giữa visual-based và logic-based), kèm giải thích cặn kẽ vì sao đúng và phân tích chi tiết lỗi sai.</div>
+                                <span class="p-tag advanced">Nâng cao</span>
+                                <div class="p-text">"Bạn là chuyên gia khảo thí ngôn ngữ cao cấp JLPT N4... Soạn bộ câu hỏi bẫy phân hóa cực mạnh về cặp cấu trúc ～そうです và ～ようです dựa trên tư duy sai lệch của sinh viên Việt Nam..."</div>
+                                <div class="p-feedback"><strong>Kết quả vượt trội:</strong> Đạt tiêu chuẩn đề thi thật. Bẫy nhiễu tinh vi đánh thẳng vào trực quan (そう) và logic khách quan (よう), kèm giải thích cặn kẽ ngữ cảnh.</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="sub-section-title">✨ Chơi thử trò chơi trắc nghiệm ngôn ngữ N4</div>
-                <div class="interactive-quiz">
-                    <div class="quiz-question">Chọn đáp án đúng nhất: 忘れない_______、ノートにメモしておこう。</div>
-                    <div class="quiz-options">
-                        <button class="quiz-btn" onclick="checkQuiz('A', true)">A. うちに</button>
-                        <button class="quiz-btn" onclick="checkQuiz('B', false)">B. 間に</button>
-                        <button class="quiz-btn" onclick="checkQuiz('C', false)">C. 最中に</button>
-                        <button class="quiz-btn" onclick="checkQuiz('D', false)">D. がてら</button>
+                <!-- INTERACTIVE WIDGET 3 -->
+                <div class="interactive-widget-box">
+                    <div class="widget-title"><i class="fa-solid fa-gamepad"></i> Minh họa tương tác: Mini-Quiz trắc nghiệm ngữ pháp bẫy (JLPT N4)</div>
+                    <p style="font-size: 13.5px; margin-bottom: 12px; color: var(--dark);">Hãy thử sức với 2 câu hỏi bẫy cực kỳ hóc búa do chính Prompt nâng cao của mình thiết kế:</p>
+                    
+                    <div class="interactive-quiz" style="margin-bottom: 15px;">
+                        <div class="quiz-question">Câu 1: 忘れない_______、ノートにメモしておこう。</div>
+                        <div class="quiz-options">
+                            <button class="quiz-btn" onclick="checkQ1('A', true)">A. うちに</button>
+                            <button class="quiz-btn" onclick="checkQ1('B', false)">B. 間に</button>
+                            <button class="quiz-btn" onclick="checkQ1('C', false)">C. 最中に</button>
+                            <button class="quiz-btn" onclick="checkQ1('D', false)">D. がてら</button>
+                        </div>
+                        <div id="quiz-ans-1" class="quiz-explanation"></div>
                     </div>
-                    <div id="quiz-ans" class="quiz-explanation"></div>
+
+                    <div class="interactive-quiz">
+                        <div class="quiz-question">Câu 2: (Khách hàng đến văn phòng của bạn) <br>A:「お客様がまもなく_______。」 <br>Chọn phương án tôn kính ngữ đúng nhất:</div>
+                        <div class="quiz-options">
+                            <button class="quiz-btn" onclick="checkQ2('A', true)">A. いらっしゃいます</button>
+                            <button class="quiz-btn" onclick="checkQ2('B', false)">B. 参ります</button>
+                            <button class="quiz-btn" onclick="checkQ2('C', false)">C. 伺います</button>
+                            <button class="quiz-btn" onclick="checkQ2('D', false)">D. お目にかかります</button>
+                        </div>
+                        <div id="quiz-ans-2" class="quiz-explanation"></div>
+                    </div>
                 </div>
 
                 <div class="p-details-box">
                     <strong>💡 Khó khăn, thuận lợi & Bài học rút ra:</strong><br>
                     <span style="font-size: 13.5px;">
-                        • <em>Thuận lợi:</em> Việc gán vai trò rõ ràng (Role Prompting) kết hợp chuỗi suy nghĩ (Chain-of-Thought) giúp giải phóng năng lượng tính toán của LLM vượt trội.<br>
-                        • <em>Khó khăn:</em> Thiết kế bẫy nhiễu học thuật tinh tế đòi hỏi chính người viết phải hiểu rõ những "điểm mù tư duy" của sinh viên Việt Nam để điều khiển AI đi đúng hướng.<br>
-                        • <em>Bài học:</em> Học viết prompt không đơn giản là học từ khóa, mà là học cách tư duy logic, thấu hiểu cấu trúc ngôn ngữ và rèn luyện kỹ năng truyền tải yêu cầu chặt chẽ.
+                        • <em>Thuận lợi:</em> Các mô hình ngôn ngữ lớn (LLM) phản hồi cực kỳ nhanh nhạy khi được hướng dẫn đúng kỹ thuật.<br>
+                        • <em>Khó khăn:</em> Để AI viết được các câu bẫy sâu sắc, người viết phải tự nghiên cứu rất sâu về tâm lý học hành vi và điểm yếu tư duy của người học.<br>
+                        • <em>Bài học:</em> Viết Prompt học thuật chính là rèn luyện khả năng lập luận, giao tiếp gãy gọn và bóc tách cấu trúc kiến thức có hệ thống.
                     </span>
                 </div>
             `,
@@ -1398,39 +1314,70 @@
                     <span class="project-badge">Dự án nhóm</span>
                 </div>
                 
-                <p style="font-size: 14.5px; text-align: justify; margin-bottom: 15px;">
-                    <strong>Mục tiêu:</strong> Thiết lập và vận hành trơn tru không gian làm việc số cho dự án nhóm "Ứng dụng AI trong Giáo dục và Ngoại ngữ", phối hợp nhịp nhàng các công cụ trực tuyến để tối ưu hóa hiệu suất làm việc từ xa.
+                <p style="font-size: 15px; text-align: justify; margin-bottom: 15px;">
+                    <strong>Mục tiêu:</strong> Thiết lập, quản trị và vận hành trơn tru hệ thống không gian số của Nhóm 33 NMCNSTNT, tối ưu hóa năng suất làm việc nhóm từ xa qua bộ ba công cụ trực tuyến Google Docs, Drive và Zalo.
                 </p>
 
-                <div class="sub-section-title">🛠️ Hệ thống 4 công cụ cộng tác trực tuyến cốt lõi</div>
-                <ul style="list-style: none; padding-left: 5px; font-size: 13.5px;">
-                    <li style="margin-bottom: 10px;"><strong>1. Google Docs (Soạn thảo cộng tác):</strong> Dùng để tổng hợp, soạn thảo nội dung phần 2 của báo cáo tổng thể. Nhờ tính năng cộng tác thời gian thực, nhóm trưởng dễ dàng theo dõi tiến độ và đảm bảo tính liên kết chặt chẽ.</li>
-                    <li style="margin-bottom: 10px;"><strong>2. Google Drive / One Drive (Lưu trữ và chia sẻ):</strong> Thống nhất thiết lập thư mục gốc dùng chung, phân quyền truy cập và phân loại thư mục con phục vụ thu thập tài liệu khoa học và dữ liệu thô.</li>
-                    <li style="margin-bottom: 10px;"><strong>3. Zalo (Giao tiếp nhóm):</strong> Kênh liên lạc chính nhờ ưu điểm truyền tải nhanh, ghim tin nhắn lịch nhắc và thực hiện các cuộc gọi thảo luận nhanh duyệt đề cương nghiên cứu.</li>
-                    <li style="margin-bottom: 10px;"><strong>4. Google Tasks (Quản lý tiến độ cá nhân):</strong> Tự lập danh sách và bảng biểu quản lý các đầu việc được giao, đảm bảo hoàn thành đúng thời hạn và không bỏ sót hạng mục nào.</li>
+                <div class="sub-section-title">🛠️ Nhiệm vụ phân công & Kỹ năng cộng tác trực tuyến của Nhi</div>
+                <p style="font-size: 14px; text-align: justify; margin-bottom: 12px; color: var(--dark);">
+                    Trong dự án nhóm nghiên cứu <strong>"Ứng dụng AI trong Giáo dục và Ngoại ngữ"</strong>, mình chịu trách nhiệm độc lập mảng nghiên cứu sâu: <em>"Ứng dụng AI trong việc học ngoại ngữ của học sinh, sinh viên"</em>. Để tối ưu quy trình từ xa, mình đã thiết lập và vận hành hệ thống phối hợp:
+                </p>
+                <ul style="list-style: none; padding-left: 5px; font-size: 13.5px; color: var(--dark);">
+                    <li style="margin-bottom: 8px;">• <strong>Google Docs (Soạn thảo cộng tác):</strong> Viết báo cáo trực tuyến phần nội dung cá nhân hóa lộ trình học, thống kê chatbot hỗ trợ rèn luyện phản xạ giao tiếp tự nhiên.</li>
+                    <li style="margin-bottom: 8px;">• <strong>Google Drive (Lưu trữ và chia sẻ):</strong> Sắp xếp thư mục dùng chung, quản lý các tệp khảo sát trắc nghiệm và file PDF nghiên cứu khoa học.</li>
+                    <li style="margin-bottom: 8px;">• <strong>Zalo (Giao tiếp nhóm):</strong> Duy trì trao đổi, ghim lịch nhắc, duyệt đề cương và tổ chức các cuộc thảo luận trực tuyến nhanh chóng.</li>
                 </ul>
 
-                <div class="sub-section-title">📋 3 Thách thức lớn & Giải pháp thực hành thực tế của Nhi</div>
+                <!-- INTERACTIVE WIDGET 4 -->
+                <div class="interactive-widget-box">
+                    <div class="widget-title"><i class="fa-solid fa-list-check"></i> Minh họa tương tác: Trình mô phỏng quản lý công việc nhóm & Chatbox vàng Zalo</div>
+                    <p style="font-size: 13.5px; margin-bottom: 12px; color: var(--dark);">Hãy thử tích chọn danh sách đầu việc dưới đây để xem tiến trình hoàn thành của Nhi, hoặc xem đoạn chat "Khung giờ vàng" Zalo:</p>
+                    <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 15px;">
+                        <div style="background: white; padding: 15px; border-radius: 10px; border: 1px solid #cbd5e1;">
+                            <h5 style="font-size:13px; margin-bottom:10px; color: var(--primary);">📋 Google Tasks của Yến Nhi</h5>
+                            <label style="display:flex; gap: 8px; font-size:12.5px; margin: 6px 0; align-items:center; cursor:pointer;">
+                                <input type="checkbox" checked onchange="updateProgress()"> Thiết lập Thư mục gốc dùng chung trên Drive
+                            </label>
+                            <label style="display:flex; gap: 8px; font-size:12.5px; margin: 6px 0; align-items:center; cursor:pointer;">
+                                <input type="checkbox" checked onchange="updateProgress()"> Khảo sát thực trạng học ngoại ngữ bằng AI
+                            </label>
+                            <label style="display:flex; gap: 8px; font-size:12.5px; margin: 6px 0; align-items:center; cursor:pointer;">
+                                <input type="checkbox" id="task-doc" onchange="updateProgress()"> Soạn thảo cơ chế cá nhân hóa lộ trình của AI lên Docs
+                            </label>
+                            <label style="display:flex; gap: 8px; font-size:12.5px; margin: 6px 0; align-items:center; cursor:pointer;">
+                                <input type="checkbox" id="task-file" onchange="updateProgress()"> Chuẩn hóa tên file tài liệu nghiên cứu khoa học
+                            </label>
+                            <div style="margin-top: 10px; font-size: 12px; font-weight: bold; color: var(--primary);" id="progress-text">Tiến độ cá nhân: 50%</div>
+                        </div>
+                        <div style="background: #eef2f7; padding: 12px; border-radius: 10px; border: 1px solid #cbd5e1; font-size: 11.5px; max-height: 180px; overflow-y: auto;">
+                            <div style="text-align: center; font-weight: bold; margin-bottom: 8px; color: #475569;">💬 Chatbox Zalo Nhóm 33</div>
+                            <div style="margin-bottom: 6px;"><strong>[21:05] Nhi:</strong> Alô cả nhà ơi, tới Khung Giờ Vàng (21h-22h) rồi! Mọi người online duyệt nhanh đề cương giúp mình để kịp tiến độ nhé!</div>
+                            <div style="margin-bottom: 6px; color: #1e40af;"><strong>[21:12] Nhóm trưởng:</strong> OK Nhi ơi, mình đang xem Docs của bạn nè. Phần cá nhân hóa lộ trình viết rất mượt rồi đó!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sub-section-title">📋 3 Thách thức thực tế & Giải pháp xử lý triệt để</div>
                 <div class="steps-container">
                     <div class="step-card">
-                        <div class="step-num">!</div>
+                        <div class="step-num">1</div>
                         <div class="step-txt">
-                            <strong>Lệch pha thời gian:</strong> Do các thành viên có lịch học khác nhau, việc phản hồi tin nhắn trên Zalo đôi khi bị chậm trễ gây gián đoạn mạch tư duy.<br>
-                            <span style="color: #2e692e;">➡️ <em>Giải pháp:</em> Đề xuất thiết lập "Khung giờ vàng phản hồi nhanh" trên Zalo (21h-22h mỗi tối), yêu cầu mọi thành viên bắt buộc online giải quyết dứt điểm các vướng mắc.</span>
+                            <strong>Lệch pha múi giờ học:</strong> Do các thành viên có lịch học khác nhau, việc phản hồi tin nhắn trên Zalo bị chậm trễ gây gián đoạn tư duy.<br>
+                            <span style="color: #15803d; font-weight: 600;">➡️ Giải pháp:</span> Thiết lập "Khung giờ vàng phản hồi nhanh" (21h-22h mỗi tối), yêu cầu cả nhóm online tập trung giải quyết vướng mắc.
                         </div>
                     </div>
                     <div class="step-card">
-                        <div class="step-num">!</div>
+                        <div class="step-num">2</div>
                         <div class="step-txt">
-                            <strong>Xung đột định dạng:</strong> Khi 3-4 người cùng chỉnh sửa văn bản trên Google Docs xảy ra tình trạng nhảy dòng chữ, lỗi phông chữ và kích thước chữ không đồng nhất.<br>
-                            <span style="color: #2e692e;">➡️ <em>Giải pháp:</em> Thiết kế một trang "Quy chuẩn định dạng chung" ở đầu file Google Docs, quy định rõ Font Times New Roman, cỡ 12, giãn dòng 1.25 để cả nhóm tuân thủ.</span>
+                            <strong>Xung đột định dạng:</strong> Khi nhiều người cùng viết báo cáo trên Docs dễ xảy ra tình trạng nhảy dòng chữ, phông chữ bị xáo trộn lung tung.<br>
+                            <span style="color: #15803d; font-weight: 600;">➡️ Giải pháp:</span> Thiết kế riêng trang Quy chuẩn chung ở đầu file Docs (Times New Roman, cỡ 12, giãn dòng 1.25) để tuân thủ thống nhất.
                         </div>
                     </div>
                     <div class="step-card">
-                        <div class="step-num">!</div>
+                        <div class="step-num">3</div>
                         <div class="step-txt">
-                            <strong>Quản trị dữ liệu lộn xộn:</strong> Một số thành viên tải tài liệu tham khảo lên thư mục chung một cách ngẫu nhiên, không đặt tên rõ ràng, gây khó khăn khi tìm kiếm đối chiếu.<br>
-                            <span style="color: #2e692e;">➡️ <em>Giải pháp:</em> Chủ động dành 15 phút cuối ngày để hỗ trợ nhóm rà soát, kiểm tra và đặt tên file trên Google Drive theo đúng công thức khoa học đã thỏa thuận.</span>
+                            <strong>Quản trị dữ liệu chưa đồng đều:</strong> Thành viên tải tài liệu tham khảo lên Drive rất lộn xộn, không đặt tên file rõ ràng.<br>
+                            <span style="color: #15803d; font-weight: 600;">➡️ Giải pháp:</span> Chủ động dành 15 phút cuối ngày rà soát, dọn dẹp và đặt tên file theo đúng công thức khoa học đã thống nhất.
                         </div>
                     </div>
                 </div>
@@ -1438,9 +1385,9 @@
                 <div class="p-details-box">
                     <strong>💡 Khó khăn, thuận lợi & Bài học rút ra:</strong><br>
                     <span style="font-size: 13.5px;">
-                        • <em>Thuận lợi:</em> Các công cụ trực tuyến cực kỳ hiện đại, miễn phí, hỗ trợ đồng bộ hóa dữ liệu thời gian thực rất tốt.<br>
-                        • <em>Khó khăn:</em> Rào cản kỹ thuật và thói quen quản trị dữ liệu chưa đồng đều giữa các thành viên.<br>
-                        • <em>Bài học:</em> Chìa khóa tạo nên sự thành công của một dự án nhóm không nằm ở sự hiện đại của công cụ, mà ở ý thức tự giác kỷ luật, sự chủ động và kỹ năng giao tiếp khéo léo của từng cá nhân.
+                        • <em>Thuận lợi:</em> Bộ công cụ Google Docs - Drive hỗ trợ đắc lực việc đồng bộ và lưu trữ tức thời.<br>
+                        • <em>Khó khăn:</em> Phối hợp từ xa dễ gặp rào cản về mặt con người nếu thiếu các quy định và cam kết chung.<br>
+                        • <em>Bài học:</em> Công cụ công nghệ dù mạnh mẽ đến mấy cũng chỉ là bổ trợ. Chìa khóa thành công nằm ở sự chủ động, kỷ luật của từng thành viên nhóm.
                     </span>
                 </div>
             `,
@@ -1450,62 +1397,52 @@
                     <span class="project-badge">Sáng tạo nội dung</span>
                 </div>
                 
-                <p style="font-size: 14.5px; text-align: justify; margin-bottom: 15px;">
+                <p style="font-size: 15px; text-align: justify; margin-bottom: 15px;">
                     <strong>Mục tiêu:</strong> Ứng dụng đồng thời hệ sinh thái 3 công cụ AI tạo sinh khác nhau để hoàn thành bài viết sáng tạo chuyên sâu dạng blog học thuật về chủ đề: "Sự tiến hóa của Chữ Hán qua các thời kỳ lịch sử và giá trị nghệ thuật trong thư pháp cổ đại".
                 </p>
 
-                <div class="sub-section-title">🎨 Quy trình phối hợp 3 công cụ AI tạo sinh</div>
-                <ul style="list-style: none; padding-left: 5px; font-size: 13.5px;">
-                    <li style="margin-bottom: 10px;"><strong>1. Gemini (Cố vấn nội dung):</strong> Nhận prompt chuyên sâu để tra cứu, tóm tắt và xây dựng bộ khung bài viết dài 1500 từ về lịch sử Chữ Hán.
-                        <div style="background:#f9f9f9; padding:6px; border-radius:6px; margin-top:4px; font-family:monospace; font-size:11.5px;">"Hãy viết một bài nghiên cứu dài về sự phát triển của Chữ Hán từ thời Giáp Cốt Văn đến Khải Thư..."</div>
-                    </li>
-                    <li style="margin-bottom: 10px;"><strong>2. Midjourney (Họa sĩ tạo hình):</strong> Tạo ảnh minh họa độc quyền, giải quyết bài toán bản quyền ảnh cổ phong trên mạng.
-                        <div style="background:#f9f9f9; padding:6px; border-radius:6px; margin-top:4px; font-family:monospace; font-size:11.5px;">/imagine prompt: a traditional Chinese calligraphy art piece, black ink strokes on aged rice paper, minimalist background, 8k resolution --ar 16:9</div>
-                    </li>
-                    <li style="margin-bottom: 10px;"><strong>3. Canva AI (Dàn trang):</strong> Gợi ý bảng phối màu truyền thống đỏ-đen của Á Đông, thiết kế các khung viền mang đậm dấu ấn cổ phong tinh tế.</li>
+                <div class="sub-section-title">🏺 Chi tiết tiến trình phát triển Chữ Hán</div>
+                <p style="font-size: 14px; text-align: justify; margin-bottom: 10px; color: var(--dark);">
+                    Nhờ sự cố vấn học thuật từ Gemini, mình đã bóc tách tiến trình chữ Hán thành 5 thời kỳ then chốt:
+                </p>
+                <ul style="list-style: none; padding-left: 5px; font-size: 13.5px; color: var(--dark);">
+                    <li style="margin-bottom: 8px;">• <strong>Giáp Cốt Văn & Kim Văn (Thế kỷ XIV - III TCN):</strong> Nét chữ mảnh dẻ khắc xương thú, thể hiện tính chất sùng bái thần quyền và vương quyền triều Thương.</li>
+                    <li style="margin-bottom: 8px;">• <strong>Tiểu Triện (Thời Tần):</strong> Biểu tượng cho sự thống nhất quốc gia của Tần Thủy Hoàng. Chữ mang tính thuôn dài đối xứng, triệt tiêu biến thể thô kệch.</li>
+                    <li style="margin-bottom: 8px;">• <strong>Lệ Thư (Thời Hán):</strong> Bước ngoặt cách mạng "Ký hiệu hóa", bẻ cong các nét tròn thành nét vuông phẳng, hỗ trợ ghi chép hành chính cực nhanh.</li>
+                    <li style="margin-bottom: 8px;">• <strong>Khải Thư (Thời Đường - nay):</strong> Đỉnh cao chuẩn mực và định hình vĩnh cửu với quy chuẩn bút pháp "Vĩnh tự bát pháp".</li>
                 </ul>
 
-                <div class="sub-section-title">📊 Ma trận phân tích hiệu quả & Vấn đề Đạo đức</div>
-                <div class="papers-container">
-                    <div class="paper-card">
-                        <div class="paper-header">
-                            <span class="paper-title">Bảng so sánh ưu nhược điểm các công cụ AI</span>
-                        </div>
-                        <table style="width: 100%; font-size: 12.5px; border-collapse: collapse; margin-top: 10px; text-align: left;">
-                            <thead>
-                                <tr style="background: rgba(162, 194, 224, 0.2);">
-                                    <th style="padding: 8px; border: 1px solid #ddd;">Công cụ</th>
-                                    <th style="padding: 8px; border: 1px solid #ddd;">Ưu điểm vượt trội</th>
-                                    <th style="padding: 8px; border: 1px solid #ddd;">Nhược điểm tồn tại</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Gemini</td>
-                                    <td style="padding: 8px; border: 1px solid #ddd;">Tổng hợp lịch sử cực nhanh, phân chia cấu trúc bài viết khoa học.</td>
-                                    <td style="padding: 8px; border: 1px solid #ddd;">Câu từ đôi khi bị lặp cấu trúc, thỉnh thoảng xảy ra lỗi ảo giác thông tin.</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Midjourney</td>
-                                    <td style="padding: 8px; border: 1px solid #ddd;">Độ phân giải xuất sắc, giả lập chất liệu giấy xuyến chỉ loang mực chân thực.</td>
-                                    <td style="padding: 8px; border: 1px solid #ddd;">Không vẽ được chữ Hán chính xác, các nét vẽ mô phỏng giả lập vô nghĩa.</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Canva AI</td>
-                                    <td style="padding: 8px; border: 1px solid #ddd;">Hỗ trợ sắp đặt các khối văn bản dài và đề xuất bố cục hợp lý.</td>
-                                    <td style="padding: 8px; border: 1px solid #ddd;">Mẫu thiết kế cổ phong Á Đông còn nghèo nàn, đòi hỏi tùy chỉnh thủ công nhiều.</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                <!-- INTERACTIVE WIDGET 5 -->
+                <div class="interactive-widget-box">
+                    <div class="widget-title"><i class="fa-solid fa-brush"></i> Minh họa tương tác: Trình tạo câu lệnh (Prompt Builder) vẽ tranh thư pháp cổ phong</div>
+                    <p style="font-size: 13.5px; margin-bottom: 12px; color: var(--dark);">Hãy lựa chọn các phong cách nghệ thuật dưới đây để tạo ngay câu lệnh Prompt cho Midjourney vẽ tranh thư pháp:</p>
+                    <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
+                        <select id="p-style" class="quiz-btn" style="padding: 6px; font-size:12px;" onchange="generateMidjourneyPrompt()">
+                            <option value="traditional Chinese calligraphy art piece">Chữ thư pháp truyền thống</option>
+                            <option value="zen-style minimalist brush painting">Tranh thủy mặc phong cách Thiền</option>
+                            <option value="abstract ink splatter calligraphy strokes">Nét bút mực loang trừu tượng</option>
+                        </select>
+                        <select id="p-paper" class="quiz-btn" style="padding: 6px; font-size:12px;" onchange="generateMidjourneyPrompt()">
+                            <option value="aged rice paper">Giấy xuyến chỉ cổ kính</option>
+                            <option value="raw textured Xuan paper with gold flakes">Giấy tuyên dát vàng thô</option>
+                            <option value="moist wet paper with dark ink bleeds">Giấy ướt loang mực đậm</option>
+                        </select>
+                        <select id="p-aspect" class="quiz-btn" style="padding: 6px; font-size:12px;" onchange="generateMidjourneyPrompt()">
+                            <option value="--ar 16:9">Tỷ lệ rộng (16:9)</option>
+                            <option value="--ar 1:1">Tỷ lệ vuông (1:1)</option>
+                            <option value="--ar 4:5">Tỷ lệ dọc (4:5)</option>
+                        </select>
+                    </div>
+                    <div class="p-text" id="prompt-mj-output">
+                        /imagine prompt: a traditional Chinese calligraphy art piece, black ink strokes on aged rice paper, minimalist background, museum quality lighting, realistic texture, 8k resolution --ar 16:9
                     </div>
                 </div>
 
-                <div class="p-details-box">
-                    <strong>🛡️ Góc nhìn đạo đức học thuật của Yến Nhi:</strong><br>
-                    <p style="font-size: 13.5px; text-align: justify; margin-top: 5px;">
-                        Mặc dù mang lại năng suất vượt trội, việc ứng dụng AI vào các đề tài văn hóa lịch sử đòi hỏi thái độ hết sức nghiêm túc về mặt đạo đức. Trí tuệ nhân tạo không thực sự hiểu văn hóa; nó chỉ tính toán xác suất từ ngữ. Do đó, nếu người học lười biếng, thiếu tư duy độc lập mà không kiểm chứng chéo thông tin bằng tài liệu khảo cổ chính thống, sẽ dễ tạo ra các kiến thức sai lệch, làm méo mó giá trị cốt lõi của di sản văn hóa cổ đại.
-                    </p>
-                </div>
+                <div class="sub-section-title">📊 Đánh giá Ưu/Nhược điểm & Cam kết Đạo đức</div>
+                <p style="font-size: 14px; text-align: justify; margin-bottom: 10px; color: var(--dark);">
+                    • <strong>Ưu nhược điểm:</strong> Gemini tổng hợp siêu tốc nhưng dễ bị ảo giác trích dẫn. Midjourney vẽ tranh giấy tuyên cực đẹp nhưng không viết được chính xác Chữ Hán mong muốn (vẽ giả lập vô nghĩa). Canva hỗ trợ dàn trang khoa học nhưng template cổ phong Á Đông còn rất nghèo nàn, đòi hỏi tùy chỉnh thủ công nhiều.<br>
+                    • <strong>Đạo đức học thuật:</strong> AI không thực sự hiểu văn hóa, nó chỉ tính toán xác suất từ ngữ. Việc sử dụng AI đòi hỏi người viết phải đối chiếu nghiêm túc với tài liệu khảo cổ học chính thống để bảo vệ tính chân thực của di sản văn hóa cổ đại.
+                </p>
             `,
             proj6: `
                 <div class="project-header">
@@ -1513,25 +1450,39 @@
                     <span class="project-badge">An toàn học thuật</span>
                 </div>
                 
-                <p style="font-size: 14.5px; text-align: justify; margin-bottom: 15px;">
+                <p style="font-size: 15px; text-align: justify; margin-bottom: 15px;">
                     <strong>Mục tiêu:</strong> Thấu hiểu các quy định, chính sách của Đại học Quốc gia Hà Nội và trường Đại học Ngoại ngữ (ULIS) về việc sử dụng AI, từ đó thiết lập bộ nguyên tắc đạo đức cá nhân lành mạnh khi nghiên cứu và học tập.
                 </p>
 
                 <div class="sub-section-title">🏛️ 3 Trụ cột chính sách sử dụng AI của VNU & ULIS</div>
-                <ul style="list-style: none; padding-left: 5px; font-size: 13.5px;">
-                    <li style="margin-bottom: 8px;">• <strong>Khuyến khích ứng dụng có định hướng:</strong> Nhà trường coi AI là công cụ hỗ trợ đắc lực nâng cao hiệu quả chứ không phải là sự thay thế cho tư duy độc lập (Ví dụ: Dự án AI Companion tại ULIS).</li>
-                    <li style="margin-bottom: 8px;">• <strong>Yêu cầu bắt buộc về tính minh bạch:</strong> Sinh viên sử dụng AI để tham khảo trong các bài tiểu luận, luận văn phải công bố rõ ràng: tên công cụ, phiên bản sử dụng và trích dẫn cụ thể các câu lệnh (Prompt) chủ chốt.</li>
-                    <li style="margin-bottom: 8px;">• <strong>Chế tài nghiêm khắc đối với gian lận:</strong> Hành vi sao chép trực tiếp, nộp sản phẩm nguyên bản do AI viết ra mà không có sự phản biện hay chỉnh sửa cá nhân được quy vào hành vi đạo văn và chịu hình thức kỷ luật học thuật nghiêm khắc.</li>
+                <p style="font-size: 14px; text-align: justify; margin-bottom: 10px; color: var(--dark);">
+                    Học phần bắt buộc "Nhập môn công nghệ số và ứng dụng trí tuệ nhân tạo" được VNU đưa vào giảng dạy từ năm 2025-2026 nhằm xây dựng năng lực số vững vàng dựa trên:
+                </p>
+                <ul style="list-style: none; padding-left: 5px; font-size: 13.5px; color: var(--dark);">
+                    <li style="margin-bottom: 8px;">• <strong>Khuyến khích ứng dụng có định hướng:</strong> Xem AI là công cụ hỗ trợ tư duy phản biện chứ không phải sự thay thế hoàn toàn cho năng lực cá nhân.</li>
+                    <li style="margin-bottom: 8px;">• <strong>Bắt buộc minh bạch nguồn gốc:</strong> Yêu cầu công bố công khai công cụ AI, phiên bản sử dụng và câu lệnh prompt cụ thể trong bài tiểu luận.</li>
+                    <li style="margin-bottom: 8px;">• <strong>Quy định xử phạt nghiêm khắc:</strong> Việc copy-paste nguyên văn bài viết do AI tạo ra và nộp dưới danh nghĩa cá nhân bị tính là đạo văn công nghệ cao và chịu kỷ luật nghiêm khắc.</li>
                 </ul>
 
-                <div class="sub-section-title">📑 6 Nguyên tắc cá nhân về sử dụng AI có trách nhiệm</div>
-                <div class="steps-container">
-                    <div class="step-card"><div class="step-num">1</div><div class="step-txt"><strong>Chủ quyền tư duy:</strong> AI chỉ là người trợ lý đắc lực, bản thân mình luôn giữ vai trò chủ đạo, chịu trách nhiệm hoàn toàn về cấu trúc và nội dung bài viết.</div></div>
-                    <div class="step-card"><div class="step-num">2</div><div class="step-txt"><strong>Minh bạch tuyệt đối:</strong> Luôn khai báo công khai, rõ ràng việc sử dụng AI trong phần phụ lục hoặc chú thích cuối bài, bao gồm cả các prompt chủ chốt.</div></div>
-                    <div class="step-card"><div class="step-num">3</div><div class="step-txt"><strong>Kiểm chứng độc lập:</strong> Không bao giờ tin tưởng tuyệt đối vào dữ liệu do AI cung cấp; luôn đối chiếu lại thông tin với các nguồn tài liệu hàn lâm uy tín.</div></div>
-                    <div class="step-card"><div class="step-num">4</div><div class="step-txt"><strong>Chống sao chép thụ động:</strong> Tuyệt đối không copy-paste nguyên văn bài viết từ AI. Luôn tự tay xử lý, viết lại bằng ngôn từ mang dấu ấn cá nhân của mình.</div></div>
-                    <div class="step-card"><div class="step-num">5</div><div class="step-txt"><strong>Bảo mật thông tin:</strong> Không tải lên hệ thống AI các dữ liệu cá nhân nhạy cảm, tài liệu nội bộ của giảng viên hoặc thông tin chưa công bố của VNU.</div></div>
-                    <div class="step-card"><div class="step-num">6</div><div class="step-txt"><strong>Rèn luyện kỹ năng nền tảng:</strong> Không để AI làm thui chột khả năng viết luận và tư duy phản biện độc lập; sử dụng AI để tối ưu hóa năng lực tự học.</div></div>
+                <!-- INTERACTIVE WIDGET 6 -->
+                <div class="interactive-widget-box">
+                    <div class="widget-title"><i class="fa-solid fa-calculator"></i> Minh họa tương tác: Trình tự đánh giá Liêm chính học thuật</div>
+                    <p style="font-size: 13.5px; margin-bottom: 12px; color: var(--dark);">Hãy tích chọn những hành vi cậu đã thực hiện khi sử dụng AI để nhận đánh giá mức độ an toàn học thuật từ Nhi nhé:</p>
+                    <div style="background: white; padding: 15px; border-radius: 10px; border: 1px solid #cbd5e1;">
+                        <label style="display:flex; gap: 8px; font-size:13px; margin: 6px 0; align-items:center; cursor:pointer;">
+                            <input type="checkbox" id="check-cite" onchange="calculateIntegrity()"> Mình có trích dẫn rõ tên công cụ AI, phiên bản và câu lệnh prompt đã sử dụng.
+                        </label>
+                        <label style="display:flex; gap: 8px; font-size:13px; margin: 6px 0; align-items:center; cursor:pointer;">
+                            <input type="checkbox" id="check-verify" onchange="calculateIntegrity()"> Mình đã đối chiếu, kiểm chứng chéo thông tin AI cung cấp với tài liệu học thuật chính thống.
+                        </label>
+                        <label style="display:flex; gap: 8px; font-size:13px; margin: 6px 0; align-items:center; cursor:pointer;">
+                            <input type="checkbox" id="check-rewrite" onchange="calculateIntegrity()"> Mình tự viết lại bài viết bằng từ ngữ của bản thân, không copy-paste thô của AI.
+                        </label>
+                        <label style="display:flex; gap: 8px; font-size:13px; margin: 6px 0; align-items:center; cursor:pointer;">
+                            <input type="checkbox" id="check-plag" onchange="calculateIntegrity()"> Mình KHÔNG nộp bài viết thô do AI tạo ra 100%.
+                        </label>
+                        <div id="integrity-result" style="margin-top: 12px; font-weight: bold; color: var(--accent); font-size: 13px;">Hãy tích chọn hành vi để đánh giá!</div>
+                    </div>
                 </div>
 
                 <div class="sub-section-title">📊 Cẩm nang sử dụng AI có trách nhiệm</div>
@@ -1558,25 +1509,43 @@
             `
         };
 
-        // Hàm chuyển đổi tab mượt mà cho Dashboard Projects
+        // Danh sách 11 tài liệu của Bài 2 để render động
+        const papersList = [
+            { id: 1, type: 'journal', title: '1. George & Thomas (2023)', desc: 'Scopus Q1. Nghiên cứu định lượng mô hình cấu trúc tuyến tính (N = 450). Lượt trích dẫn: 78.', pro: 'Mô hình cấu trúc tuyến tính rõ ràng.', con: 'Mẫu giới hạn tại Đông Nam Á.', rating: 'Xuất sắc' },
+            { id: 2, type: 'journal', title: '2. Nguyễn & Lê (2025)', desc: 'Hội đồng Giáo sư tính điểm. Phương pháp hỗn hợp. Xuất bản năm 2025.', pro: 'Sát thực tế văn hóa DN Việt Nam.', con: 'Dung lượng mẫu định tính nhỏ.', rating: 'Xuất sắc' },
+            { id: 3, type: 'journal', title: '3. Al-Omari (2024)', desc: 'Hệ thống CSDL Emerald Insight. Cronbach\'s Alpha đạt chuẩn. Trích dẫn: 34.', pro: 'Bộ công cụ đo lường chuẩn hóa.', con: 'Tập trung lý thuyết, ít biến cảm xúc.', rating: 'Xuất sắc' },
+            { id: 4, type: 'journal', title: '4. Smith et al. (2022)', desc: 'Hệ thống Frontiers (Peer-reviewed). Góc độ tâm lý học Gen Z. Trích dẫn > 120.', pro: 'Giải mã sâu tâm lý cô độc kỹ thuật số.', con: 'Số liệu thu thập ngay sau đại dịch.', rating: 'Xuất sắc' },
+            { id: 5, type: 'journal', title: '5. Zhao (2025)', desc: 'Thuộc danh mục Springer Nature uy tín. So sánh đa thế hệ (Gen Y vs Gen Z).', pro: 'Đối chiếu rõ nét kỳ vọng các thế hệ.', con: 'Phương pháp lấy mẫu thuận tiện.', rating: 'Tốt' },
+            { id: 6, type: 'journal', title: '6. Kim & Park (2026)', desc: 'Xuất bản đầu năm 2026 trên ScienceDirect. Khảo sát ứng dụng AI trong Hybrid Work.', pro: 'Cập nhật xu hướng AI mới nhất.', con: 'Chưa có nhiều nghiên cứu đối chứng.', rating: 'Xuất sắc' },
+            { id: 7, type: 'book', title: '7. Armstrong & Taylor (2021)', desc: 'NXB Kogan Page (London). Tác giả đầu ngành HRM. Lý thuyết kinh điển vững chắc.', pro: 'Khung lý thuyết nền tảng cực vững chắc.', con: 'Thiếu số liệu thực tế làn sóng 2026.', rating: 'Xuất sắc' },
+            { id: 8, type: 'book', title: '8. Gratton (2022)', desc: 'NXB Harvard Business Review Press. Giáo sư tại London Business School.', pro: 'Mô hình thiết kế thực tiễn cho quản lý.', con: 'Thiếu các kiểm định toán học định lượng.', rating: 'Tốt' },
+            { id: 9, type: 'web', title: '9. Deloitte Global (2025)', desc: 'Tập đoàn Big 4 lớn nhất thế giới. Quy mô khảo sát N = 22.000 toàn cầu.', pro: 'Quy mô mẫu khổng lồ, tính thực tiễn cao.', con: 'Không qua bình duyệt hàn lâm.', rating: 'Tốt' },
+            { id: 10, type: 'web', title: '10. McKinsey (2024)', desc: 'Viện nghiên cứu McKinsey Global Institute. Tập trung vào kinh tế vĩ mô.', pro: 'Phân tích sâu chi phí và hiệu quả.', con: 'Bản chất là báo cáo thương mại.', rating: 'Tốt' },
+            { id: 11, type: 'thesis', title: '11. Phạm (2024)', desc: 'Luận văn Thạc sĩ ĐH Kinh tế Quốc dân. Khảo sát 200 nhân sự tại Hà Nội.', pro: 'Đề xuất giải pháp rất sát thực tế địa phương.', con: 'Phạm vi lưu hành nội bộ trường.', rating: 'Khá' }
+        ];
+
+        // Hàm đổi Tab Dashboard Dự án
         function switchTab(event, tabId) {
-            // Loại bỏ class active ở các tab button
             const buttons = document.querySelectorAll('.tab-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
 
-            // Thêm class active cho tab vừa nhấp
             event.currentTarget.classList.add('active');
 
-            // Cập nhật nội dung cửa sổ hiển thị kèm hiệu ứng fadeIn
             const windowContent = document.getElementById('window-content');
             windowContent.innerHTML = projectData[tabId];
             windowContent.style.animation = 'none';
-            // Trigger reflow để reset animation
             windowContent.offsetHeight; 
             windowContent.style.animation = 'fadeInWindow 0.5s ease';
+
+            // Khởi tạo các tương tác nếu có
+            if (tabId === 'proj1') {
+                resetFolderSim();
+            } else if (tabId === 'proj2') {
+                filterPapers('all');
+            }
         }
 
-        // Hàm chuyển đổi Prompt Tab (Bài 3)
+        // Hàm đổi Tab Prompt (Bài 3)
         function switchPrompt(event, taskId) {
             const buttons = document.querySelectorAll('.p-tab-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
@@ -1588,21 +1557,156 @@
             document.getElementById(taskId).style.display = 'block';
         }
 
-        // Hàm kiểm tra đáp án Trắc nghiệm (Bài 3)
-        function checkQuiz(choice, isCorrect) {
-            const ansBox = document.getElementById('quiz-ans');
-            ansBox.style.display = 'block';
+        /* --- CÁC HÀM TƯƠNG TÁC CHO 6 BÀI TẬP --- */
+
+        // Bài 1: Trình giả lập ổ đĩa ảo tương tác
+        function resetFolderSim() {
+            document.getElementById('sim-tree-content').innerHTML = `(Ổ đĩa trống)`;
+        }
+        function runStep1() {
+            document.getElementById('sim-tree-content').innerHTML = `
+                <div class="folder-item">📁 ThucHanh_TruongNgocYenNhi</div>
+            `;
+        }
+        function runStep2() {
+            document.getElementById('sim-tree-content').innerHTML = `
+                <div class="folder-item">📁 ThucHanh_TruongNgocYenNhi</div>
+                <div class="file-item">📄 GhiChuQuanTrong.txt (F2: Đã đổi tên)</div>
+            `;
+        }
+        function runStep3() {
+            document.getElementById('sim-tree-content').innerHTML = `
+                <div class="folder-item">📁 ThucHanh_TruongNgocYenNhi</div>
+                <div class="file-item">📄 GhiChuQuanTrong.txt</div>
+                <div class="folder-tree">
+                    <div class="folder-item">📁 TaiLieu</div>
+                </div>
+            `;
+        }
+        function runStep4() {
+            document.getElementById('sim-tree-content').innerHTML = `
+                <div class="folder-item">📁 ThucHanh_TruongNgocYenNhi</div>
+                <div class="file-item">📄 GhiChuQuanTrong.txt (Tệp gốc)</div>
+                <div class="folder-tree">
+                    <div class="folder-item">📁 TaiLieu</div>
+                    <div class="file-item">📄 GhiChuQuanTrong.txt (Bản sao Copy)</div>
+                    <div class="file-item">📄 DiChuyen.txt (Bản chuyển Cut)</div>
+                </div>
+            `;
+        }
+        function runStep5() {
+            document.getElementById('sim-tree-content').innerHTML = `
+                <div class="folder-item">📁 ThucHanh_TruongNgocYenNhi</div>
+                <div class="file-item">📄 GhiChuQuanTrong.txt (Tệp gốc)</div>
+                <div class="folder-tree">
+                    <div class="folder-item">📁 TaiLieu</div>
+                    <div class="file-item" style="color: #fda4af; text-decoration: line-through;">📄 GhiChuQuanTrong.txt (Đã xóa vào Recycle Bin)</div>
+                    <div class="file-item" style="color: #f43f5e; font-weight: bold;">❌ DiChuyen.txt (Đã xóa vĩnh viễn bằng Shift+Delete)</div>
+                </div>
+            `;
+        }
+
+        // Bài 2: Bộ lọc ma trận tài liệu thông minh
+        function filterPapers(filterType) {
+            const container = document.getElementById('papers-filter-box');
+            container.innerHTML = '';
             
+            const filtered = filterType === 'all' 
+                ? papersList 
+                : papersList.filter(p => p.type === filterType);
+                
+            filtered.forEach(p => {
+                container.innerHTML += `
+                    <div class="paper-card">
+                        <div class="paper-header">
+                            <span class="paper-title">${p.title}</span>
+                            <div class="paper-meta">
+                                <span class="badge-type ${p.type}">${p.type === 'journal' ? 'Tạp chí' : p.type === 'book' ? 'Sách' : p.type === 'web' ? 'Web' : 'Luận văn'}</span>
+                                <span class="badge-rating">Độ tin cậy: ${p.rating}</span>
+                            </div>
+                        </div>
+                        <div class="paper-desc">${p.desc}</div>
+                        <div class="paper-analysis">
+                            <div class="analysis-pro"><strong>Ưu điểm:</strong> ${p.pro}</div>
+                            <div class="analysis-con"><strong>Nhược điểm:</strong> ${p.con}</div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Bài 3: Kiểm tra đáp án Quiz bẫy
+        function checkQ1(choice, isCorrect) {
+            const ansBox = document.getElementById('quiz-ans-1');
+            ansBox.style.display = 'block';
             if (isCorrect) {
                 ansBox.className = 'quiz-explanation correct';
                 ansBox.innerHTML = '<strong>Chính xác rồi nè! 🎉</strong><br>Cụm từ <code>うちに</code> biểu thị việc thực hiện hành động trước khi một trạng thái thay đổi một cách tự nhiên (trước khi quên). Còn <code>間に</code> không đi kèm thể phủ định mang tính ý chí trong văn cảnh này. Cậu nắm ngữ pháp N4 rất xuất sắc đó!';
             } else {
                 ansBox.className = 'quiz-explanation incorrect';
-                ansBox.innerHTML = '<strong>Hơi tiếc một chút, chưa chính xác rồi! 🌸</strong><br>Gợi ý nhé: Hãy chú ý thể phủ định phía trước ô trống. Nhấp chọn đáp án <strong>A</strong> để xem phân tích chi tiết lỗi sai kinh điển của sinh viên Việt Nam nha!';
+                ansBox.innerHTML = '<strong>Hơi tiếc một chút, chưa chính xác rồi! 🌸</strong><br>Bẫy đánh lạc hướng ở đây là cấu trúc phủ định. Hãy nhấp chọn đáp án <strong>A</strong> để xem phân tích chi tiết lỗi sai kinh điển của sinh viên Việt Nam nha!';
             }
         }
 
-        // Tương tác di chuột tạo Star Particles lung linh theo back.jpg
+        function checkQ2(choice, isCorrect) {
+            const ansBox = document.getElementById('quiz-ans-2');
+            ansBox.style.display = 'block';
+            if (isCorrect) {
+                ansBox.className = 'quiz-explanation correct';
+                ansBox.innerHTML = '<strong>Tuyệt vời! Đáp án đúng là A! 🎯</strong><br>Khách hàng là đối tượng bề trên, đối phương cần được nâng tầm tôn kính. Do đó, ta phải dùng động từ tôn kính nhóm đặc biệt <code>いらっしゃいます</code> (Tôn kính của 行く/来る/いる). Các phương án B, C, D đều là khiêm nhường ngữ chỉ dùng hạ mình hoặc hạ bphe của mình xuống.';
+            } else {
+                ansBox.className = 'quiz-explanation incorrect';
+                ansBox.innerHTML = '<strong>Ồ, nhầm lẫn mất rồi! ❌</strong><br>Hãy nhớ kỹ nguyên tắc cốt lõi: Với hành động của bề trên/đối phương, tuyệt đối không dùng Khiêm nhường ngữ (参る, 伺う, お目にかかる). Hãy nhấp lại chọn <strong>A</strong> để ghi nhớ nguyên tắc vàng nhé!';
+            }
+        }
+
+        // Bài 4: Trình mô phỏng quản lý công việc nhóm
+        function updateProgress() {
+            let total = 4;
+            let checkedCount = 2; // Gốc có 2 task check sẵn
+            
+            if (document.getElementById('task-doc') && document.getElementById('task-doc').checked) checkedCount++;
+            if (document.getElementById('task-file') && document.getElementById('task-file').checked) checkedCount++;
+            
+            let percent = Math.round((checkedCount / total) * 100);
+            const progressText = document.getElementById('progress-text');
+            if (progressText) {
+                progressText.innerText = `Tiến độ cá nhân: ${percent}%`;
+            }
+        }
+
+        // Bài 5: Bộ tạo Prompt Midjourney tự động
+        function generateMidjourneyPrompt() {
+            const style = document.getElementById('p-style').value;
+            const paper = document.getElementById('p-paper').value;
+            const aspect = document.getElementById('p-aspect').value;
+            
+            document.getElementById('prompt-mj-output').innerText = 
+                `/imagine prompt: a ${style}, black ink strokes on ${paper}, minimalist background, museum quality lighting, realistic texture, 8k resolution ${aspect}`;
+        }
+
+        // Bài 6: Trình tự đánh giá Liêm chính học thuật
+        function calculateIntegrity() {
+            let score = 0;
+            if (document.getElementById('check-cite').checked) score += 25;
+            if (document.getElementById('check-verify').checked) score += 25;
+            if (document.getElementById('check-rewrite').checked) score += 25;
+            if (document.getElementById('check-plag').checked) score += 25;
+            
+            const resultBox = document.getElementById('integrity-result');
+            if (score === 100) {
+                resultBox.style.color = '#16a34a';
+                resultBox.innerHTML = `🌟 Chỉ số Liêm chính: 100/100 (Tuyệt hảo! Cậu là hình mẫu công dân số có trách nhiệm!)`;
+            } else if (score >= 50) {
+                resultBox.style.color = '#d97706';
+                resultBox.innerHTML = `⚠️ Chỉ số Liêm chính: ${score}/100 (Khá tốt, hãy chú ý thực hiện thêm các bước còn lại để bảo vệ bản quyền nhé!)`;
+            } else {
+                resultBox.style.color = '#f43f5e';
+                resultBox.innerHTML = `🚨 Chỉ số Liêm chính: ${score}/100 (Cảnh báo! Hãy tích chọn các hành vi đúng quy chuẩn để tránh rủi ro đạo văn nha!)`;
+            }
+        }
+
+        // Tương tác tạo Star Particles khi chuột di chuyển
         document.addEventListener('mousemove', function(e) {
             if (Math.random() > 0.92) {
                 createStar(e.pageX, e.pageY);
@@ -1637,7 +1741,7 @@
             }, 800);
         }
 
-        // Tự động highlight thanh menu khi cuộn
+        // Auto highlight menu on scroll
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('nav a');
 
@@ -1645,7 +1749,6 @@
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
                 if (pageYOffset >= (sectionTop - 250)) {
                     current = section.getAttribute('id');
                 }
@@ -1658,6 +1761,11 @@
                 }
             });
         });
+
+        // Khởi tạo hiển thị Bài 1 mặc định khi load
+        window.onload = function() {
+            resetFolderSim();
+        }
     </script>
 </body>
 </html>
